@@ -5,7 +5,7 @@ import { reasons } from '../data/homeContent';
 
 const WhyChooseUs = () => {
   return (
-    <section className='py-16 px-6 bg-white text-gray-900'>
+    <section className='py-16 px-6 bg-[var(--color-background)] text-[var(--color-foreground)]'>
       <div className='max-w-6xl mx-auto'>
         <SectionTitle
           title='Why Choose GDMT Creations?'
@@ -16,7 +16,7 @@ const WhyChooseUs = () => {
           {reasons.map(([title, desc]) => (
             <div
               key={title}
-              className='flex flex-col gap-2 border-l-4 border-indigo-500 pl-4'
+              className='flex flex-col gap-2 border-l-4 border-[var(--color-primary)] pl-4'
             >
               <h3 className='text-xl font-semibold'>{title}</h3>
               <p className='text-gray-600'>{desc}</p>

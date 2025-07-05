@@ -4,9 +4,9 @@ import { services } from '../data/homeContent';
 
 const ServicesSection = () => {
   return (
-    <section className='py-20 px-6 bg-gray-50 text-gray-900'>
+    <section className='py-20 px-6 bg-[var(--color-background)] text-[var(--color-foreground)]'>
       <div className='max-w-6xl mx-auto'>
-        <h2 className='text-3xl font-bold text-center mb-14 text-primary'>
+        <h2 className='text-3xl font-bold text-center mb-14 text-[var(--color-primary)]'>
           What We Do
         </h2>
 
@@ -14,7 +14,7 @@ const ServicesSection = () => {
           {services.map(({ emoji, title, desc }) => (
             <div
               key={title}
-              className='bg-white rounded-xl border-t-4 border-primary shadow-md hover:shadow-lg transition-shadow p-8 text-center'
+              className='bg-white rounded-xl border-t-4 border-[var(--color-primary)] shadow-md hover:shadow-lg transition-shadow p-8 text-center'
             >
               <div className='text-5xl mb-4'>{emoji}</div>
               <h3 className='text-xl font-semibold mb-3'>{title}</h3>

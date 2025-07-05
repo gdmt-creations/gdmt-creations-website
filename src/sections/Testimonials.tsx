@@ -4,8 +4,8 @@ import { testimonials } from '../data/homeContent';
 
 const Testimonials = () => {
   return (
-    <section className='py-16 px-6 bg-gray-100 text-gray-900'>
-      <h2 className='text-3xl font-bold text-center mb-10'>
+    <section className='py-16 px-6 bg-[var(--color-background)] text-[var(--color-foreground)]'>
+      <h2 className='text-3xl font-bold text-center mb-10 text-[var(--color-primary)]'>
         What Our Clients Say
       </h2>
 
@@ -13,7 +13,7 @@ const Testimonials = () => {
         {testimonials.map((quote, index) => (
           <blockquote
             key={index}
-            className='bg-white p-6 rounded-xl shadow-md border-l-4 border-indigo-500 italic'
+            className='bg-white p-6 rounded-xl shadow-md border-l-4 border-[var(--color-primary)] italic text-gray-700'
           >
             “{quote}”
           </blockquote>

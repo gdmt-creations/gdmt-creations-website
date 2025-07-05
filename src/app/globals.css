@@ -1,6 +1,11 @@
-@import "tailwindcss";
+@import 'tailwindcss';
 
 :root {
+  --color-primary: #f24e42; /* GDMT Red */
+  --color-background: #ffffff; /* Pure White */
+  --color-foreground: #1f1f1f;
+  --font-sans: var(--font-geist-sans);
+  --font-mono: var(--font-geist-mono);
   --background: #ffffff;
   --foreground: #171717;
 }

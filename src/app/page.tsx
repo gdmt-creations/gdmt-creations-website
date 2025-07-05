@@ -1,8 +1,8 @@
-import CallToAction from '../sections/CallToAction';
-import HeroSection from '../sections/HeroSection';
-import ServicesSection from '../sections/ServicesSection';
-import Testimonials from '../sections/Testimonials';
-import WhyChooseUs from '../sections/WhyChooseUs';
+import CallToAction from '@/sections/CallToAction';
+import HeroSection from '@/sections/HeroSection';
+import ServicesSection from '@/sections/ServicesSection';
+import Testimonials from '@/sections/Testimonials';
+import WhyChooseUs from '@/sections/WhyChooseUs';
 
 export default function HomePage() {
   return (

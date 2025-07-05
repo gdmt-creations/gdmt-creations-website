@@ -2,9 +2,10 @@
 
 const HeroSection = () => {
   return (
-    <section className='min-h-[90vh] bg-white text-gray-900 flex flex-col justify-center items-center text-center px-6 py-20'>
+    <section className='min-h-[90vh] bg-[var(--color-background)] text-[var(--color-foreground)] flex flex-col justify-center items-center text-center px-6 py-20'>
       <h1 className='text-4xl md:text-6xl font-bold mb-4'>
-        Welcome to <span className='text-[#F24E42]'>GDMT Creations</span>
+        Welcome to{' '}
+        <span className='text-[var(--color-primary)]'>GDMT Creations</span>
       </h1>
 
       <p className='text-xl md:text-2xl mb-6 text-gray-700'>
@@ -20,7 +21,7 @@ const HeroSection = () => {
 
       <a
         href='/contact'
-        className='bg-[#F24E42] text-white px-6 py-3 rounded-lg font-medium text-lg hover:bg-red-600 transition'
+        className='bg-[var(--color-primary)] text-white px-6 py-3 rounded-lg font-medium text-lg hover:brightness-110 transition'
       >
         Let’s Collaborate
       </a>
