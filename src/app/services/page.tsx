@@ -1,7 +1,6 @@
 'use client';
 
-import { ArrowRightCircle, ArrowRightCircleIcon } from 'lucide-react';
-
+import { ArrowRightCircleIcon } from 'lucide-react';
 import { servicesList } from '@/data/servicesData';
 
 type Service = {
