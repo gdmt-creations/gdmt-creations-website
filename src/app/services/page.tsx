@@ -1,5 +1,7 @@
 'use client';
 
+import { ArrowRightCircle, ArrowRightCircleIcon } from 'lucide-react';
+
 import { servicesList } from '@/data/servicesData';
 
 type Service = {
@@ -10,6 +12,7 @@ type Service = {
     label: string;
     link: string;
   };
+  slug: string;
 };
 
 const ServicesPage = () => {
@@ -29,10 +32,7 @@ const ServicesPage = () => {
 
         <div className='flex flex-col gap-16'>
           {servicesList.map(
-            (
-              { title, subtitle, points, cta }: Service,
-              idx: number // ✅ Typed here
-            ) => {
+            ({ title, subtitle, points, cta, slug }: Service, idx: number) => {
               const isReversed = idx % 2 !== 0;
 
               return (
@@ -42,14 +42,12 @@ const ServicesPage = () => {
                     isReversed ? 'md:flex-row-reverse' : ''
                   }`}
                 >
-                  {/* Icon Placeholder Block */}
                   <div className='w-full md:w-1/3 h-40 bg-[var(--color-primary)] bg-opacity-10 flex items-center justify-center rounded-xl'>
                     <span className='text-[var(--color-primary)] text-4xl font-bold'>
                       {title.split(' ')[0]}
                     </span>
                   </div>
 
-                  {/* Text Content */}
                   <div className='w-full md:w-2/3 bg-gray-50 p-6 sm:p-8 rounded-xl border-l-4 border-[var(--color-primary)] shadow-md hover:shadow-lg transition-all'>
                     <h2 className='text-2xl font-semibold text-[var(--color-primary)] mb-2'>
                       {title}
@@ -60,12 +58,19 @@ const ServicesPage = () => {
                         <li key={i}>{point}</li>
                       ))}
                     </ul>
-                    <div className='mt-5'>
+                    <div className='mt-5 flex flex-wrap gap-4'>
                       <a
                         href={cta.link}
-                        className='inline-block text-sm text-[var(--color-primary)] font-medium underline hover:text-red-600 transition'
+                        className='bg-[var(--color-primary)] text-white px-6 py-3 rounded-md font-medium hover:bg-red-600 transition flex gap-2 items-center'
                       >
                         {cta.label}
+                        <ArrowRightCircleIcon size={20} />
+                      </a>
+                      <a
+                        href={`/services/${slug}`}
+                        className='border border-[var(--color-primary)] text-[var(--color-primary)] px-6 py-3 rounded-md font-medium hover:bg-[var(--color-primary)] hover:text-white transition flex gap-2 items-center'
+                      >
+                        View More <ArrowRightCircleIcon size={20} />
                       </a>
                     </div>
                   </div>

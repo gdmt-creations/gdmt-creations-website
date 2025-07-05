@@ -1,6 +1,7 @@
 export const servicesList = [
   {
     title: 'Graphic Designing',
+    slug: 'graphic-designing',
     subtitle: 'Visually Captivating Designs That Speak Your Brand',
     points: [
       'Logo & Brand Identity',
@@ -12,6 +13,7 @@ export const servicesList = [
   },
   {
     title: 'Video Editing & Post Production',
+    slug: 'video-editing-post-production',
     subtitle: 'Transform Raw Footage into Compelling Visual Stories',
     points: [
       'Reels, Ads & YouTube Content',
@@ -23,6 +25,7 @@ export const servicesList = [
   },
   {
     title: 'Audio Editing & Post Production',
+    slug: 'audio-editing-post-production',
     subtitle: 'Polished Sound with Studio-Grade Clarity',
     points: [
       'Podcast Editing & Mastering',
@@ -34,6 +37,7 @@ export const servicesList = [
   },
   {
     title: 'Website Design & Development',
+    slug: 'website-design-development',
     subtitle: 'Responsive, Modern Websites That Convert',
     points: [
       'Custom Web Design',
@@ -45,6 +49,7 @@ export const servicesList = [
   },
   {
     title: 'App Design & Development',
+    slug: 'app-design-development',
     subtitle: 'Seamless Mobile Experiences That Drive Engagement',
     points: [
       'UI/UX Design for iOS & Android',
@@ -56,6 +61,7 @@ export const servicesList = [
   },
   {
     title: '2D & 3D Interior Design',
+    slug: 'interior-design',
     subtitle: 'From Vision to Virtual – Visualize Before You Build',
     points: [
       'Home & Commercial Interiors',
@@ -67,6 +73,7 @@ export const servicesList = [
   },
   {
     title: 'Social Media Management',
+    slug: 'social-media-management',
     subtitle: 'Strategic Content That Builds Your Online Presence',
     points: [
       'Custom Social Media Strategies',
