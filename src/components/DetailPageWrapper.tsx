@@ -1,8 +1,8 @@
 'use client';
 
-import { ArrowLeft, ArrowLeftCircleIcon } from 'lucide-react';
 import React, { useEffect, useState } from 'react';
 
+import { ArrowLeftCircleIcon } from 'lucide-react';
 import { useRouter } from 'next/navigation';
 
 interface DetailPageWrapperProps {
