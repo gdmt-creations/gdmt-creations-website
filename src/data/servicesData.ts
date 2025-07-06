@@ -10,6 +10,7 @@ export const servicesList = [
       'Ad Creatives and Motion Graphics',
     ],
     cta: { label: 'Get a Custom Design Quote', link: '/contact' },
+    image: '/assets/images/graphic-designing.png',
   },
   {
     title: 'Video Editing & Post Production',
@@ -22,6 +23,7 @@ export const servicesList = [
       'Complete Post-Production Support',
     ],
     cta: { label: 'Start Your Video Project', link: '/contact' },
+    image: '/assets/images/video-editing-post-production.png',
   },
   {
     title: 'Audio Editing & Post Production',
@@ -34,6 +36,7 @@ export const servicesList = [
       'Final Mastering for Publishing',
     ],
     cta: { label: 'Send Your Audio for Editing', link: '/contact' },
+    image: '/assets/images/audio-editing-post-production.png',
   },
   {
     title: 'Website Design & Development',
@@ -46,6 +49,7 @@ export const servicesList = [
       'Ongoing Maintenance & Support',
     ],
     cta: { label: 'Book a Free Website Consultation', link: '/contact' },
+    image: '/assets/images/website-design-development.png',
   },
   {
     title: 'App Design & Development',
@@ -58,6 +62,23 @@ export const servicesList = [
       'App Store Submission & Updates',
     ],
     cta: { label: 'Let’s Build Your App Together', link: '/contact' },
+    image: '/assets/images/app-design-development.png',
+  },
+  {
+    title: 'Agentic AI Design & Development',
+    slug: 'agentic-ai-design-development',
+    subtitle: 'Building Intelligent Systems That Think, Decide & Act',
+    points: [
+      'Goal-Driven AI Agent Design',
+      'Custom AI Workflow Automation',
+      'NLP Interfaces & Smart Chatbots',
+      'Tool & API Integrations',
+    ],
+    cta: {
+      label: 'Start Building with Agentic AI',
+      link: '/contact',
+    },
+    image: '/assets/images/agentic-ai-design-development.png',
   },
   {
     title: '2D & 3D Interior Design',
@@ -70,6 +91,7 @@ export const servicesList = [
       'Design to Execution Support',
     ],
     cta: { label: 'Schedule Your Interior Consultation', link: '/contact' },
+    image: '/assets/images/interior-design.png',
   },
   {
     title: 'Social Media Management',
@@ -82,5 +104,6 @@ export const servicesList = [
       'Performance Analytics & Insights',
     ],
     cta: { label: 'Grow Your Social Presence with Us', link: '/contact' },
+    image: '/assets/images/social-media-management.png',
   },
 ];

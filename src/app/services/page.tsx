@@ -1,6 +1,7 @@
 'use client';
 
 import { ArrowRightCircleIcon } from 'lucide-react';
+import Image from 'next/image';
 import { servicesList } from '@/data/servicesData';
 
 type Service = {
@@ -12,6 +13,7 @@ type Service = {
     link: string;
   };
   slug: string;
+  image: string;
 };
 
 const ServicesPage = () => {
@@ -31,7 +33,10 @@ const ServicesPage = () => {
 
         <div className='flex flex-col gap-16'>
           {servicesList.map(
-            ({ title, subtitle, points, cta, slug }: Service, idx: number) => {
+            (
+              { title, subtitle, points, cta, slug, image }: Service,
+              idx: number
+            ) => {
               const isReversed = idx % 2 !== 0;
 
               return (
@@ -41,10 +46,16 @@ const ServicesPage = () => {
                     isReversed ? 'md:flex-row-reverse' : ''
                   }`}
                 >
-                  <div className='w-full md:w-1/3 h-40 bg-[var(--color-primary)] bg-opacity-10 flex items-center justify-center rounded-xl'>
-                    <span className='text-[var(--color-primary)] text-4xl font-bold'>
-                      {title.split(' ')[0]}
-                    </span>
+                  <div className='w-full md:w-1/3'>
+                    <div className='border-2 border-[var(--color-primary)] rounded-xl p-3 bg-white'>
+                      <Image
+                        src={image}
+                        alt={`${title} illustration`}
+                        width={400}
+                        height={250}
+                        className='w-full h-auto object-contain rounded-md'
+                      />
+                    </div>
                   </div>
 
                   <div className='w-full md:w-2/3 bg-gray-50 p-6 sm:p-8 rounded-xl border-l-4 border-[var(--color-primary)] shadow-md hover:shadow-lg transition-all'>
