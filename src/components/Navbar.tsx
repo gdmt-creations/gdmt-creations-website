@@ -1,5 +1,6 @@
 'use client';
 
+import Image from 'next/image';
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
 import { useState } from 'react';
@@ -20,12 +21,18 @@ const Navbar = () => {
   return (
     <header className='bg-white shadow-md fixed top-0 left-0 right-0 z-50'>
       <div className='max-w-7xl mx-auto px-6 py-4 flex justify-between items-center'>
-        {/* Logo */}
-        <Link
-          href='/'
-          className='text-2xl font-bold text-[var(--color-primary)]'
-        >
-          GDMT Creations
+        {/* Logo with image */}
+        <Link href='/' className='flex items-center space-x-2'>
+          <Image
+            src='/assets/images/GDMT-creations-logo.jpg'
+            alt='GDMT Creations Logo'
+            width={40}
+            height={40}
+            className='rounded-sm'
+          />
+          <span className='text-xl font-bold text-[var(--color-primary)]'>
+            GDMT Creations
+          </span>
         </Link>
 
         {/* Desktop nav */}

@@ -2,13 +2,22 @@
 
 import { contactInfo, quickLinks, socialLinks } from '../data/footerContent';
 
+import Image from 'next/image';
+
 const Footer = () => {
   return (
     <footer className='bg-dark text-white px-6 py-12'>
       <div className='max-w-7xl mx-auto grid md:grid-cols-4 gap-10'>
         {/* Brand */}
         <div>
-          <h2 className='text-2xl font-bold text-primary mb-2'>
+          <Image
+            src='/assets/images/GDMT-creations-logo.jpg'
+            alt='GDMT Creations Logo'
+            width={500}
+            height={500}
+            className='rounded-sm'
+          />
+          <h2 className='text-2xl font-bold text-primary my-2 '>
             GDMT Creations
           </h2>
           <p className='text-sm text-gray-400'>
