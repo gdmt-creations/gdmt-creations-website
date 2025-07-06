@@ -5,36 +5,49 @@ export const services = [
     emoji: '🎨',
     title: 'Graphic Designing',
     desc: 'Captivating visuals that bring your brand to life — from logos and brochures to social creatives and ads.',
+    slug: 'graphic-designing',
   },
   {
     emoji: '🎬',
     title: 'Video Editing & Post Production',
     desc: 'Transform raw footage into cinematic, scroll-stopping content — reels, ad films, 2D/3D animations, and more.',
+    slug: 'video-editing-post-production',
   },
   {
     emoji: '🎧',
     title: 'Audio Editing & Post Production',
     desc: 'Crystal-clear sound for podcasts, ads, and voiceovers. We handle noise reduction, mixing, and mastering.',
+    slug: 'audio-editing-post-production',
   },
   {
     emoji: '💻',
     title: 'Website Design & Development',
     desc: 'Custom-built, high-performance websites that are responsive, fast, and built to convert.',
+    slug: 'website-design-development',
   },
   {
     emoji: '📱',
     title: 'App Design & Development',
     desc: 'User-focused mobile apps tailored to your goals — built for iOS, Android, and cross-platform frameworks.',
+    slug: 'app-design-development',
   },
   {
     emoji: '🏡',
     title: '2D & 3D Interior Design',
     desc: 'From layout planning to photorealistic renders, we turn concepts into styled, functional spaces.',
+    slug: 'interior-design',
   },
   {
     emoji: '📣',
     title: 'Social Media Management',
     desc: 'End-to-end content creation, engagement, and strategy to grow your online presence and community.',
+    slug: 'social-media-management',
+  },
+  {
+    emoji: '🧠',
+    title: 'Agentic AI Design & Development',
+    desc: 'Designing autonomous AI agents that think, decide, and act—purpose-built for smart business automation.',
+    slug: 'agentic-ai-design-development',
   },
 ];
 
