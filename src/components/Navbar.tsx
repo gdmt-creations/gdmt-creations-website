@@ -1,12 +1,21 @@
 'use client';
 
 import Link from 'next/link';
+import { usePathname } from 'next/navigation';
 import { useState } from 'react';
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
+  const pathname = usePathname();
 
   const toggleMenu = () => setIsOpen(!isOpen);
+
+  const linkClass = (href: string) =>
+    `transition-colors px-2 py-1 rounded-md ${
+      pathname === href
+        ? 'text-[var(--color-primary)] font-semibold underline'
+        : 'hover:text-[var(--color-primary)]'
+    }`;
 
   return (
     <header className='bg-white shadow-md fixed top-0 left-0 right-0 z-50'>
@@ -21,11 +30,18 @@ const Navbar = () => {
 
         {/* Desktop nav */}
         <nav className='hidden md:flex space-x-6 text-sm font-medium text-gray-700'>
-          <Link href='/'>Home</Link>
-          <Link href='/services'>Services</Link>
-          <Link href='/portfolio'>Portfolio</Link>
-          <Link href='/about'>About</Link>
-          <Link href='/contact'>Contact</Link>
+          <Link href='/' className={linkClass('/')}>
+            Home
+          </Link>
+          <Link href='/services' className={linkClass('/services')}>
+            Services
+          </Link>
+          <Link href='/about' className={linkClass('/about')}>
+            About
+          </Link>
+          <Link href='/contact' className={linkClass('/contact')}>
+            Contact
+          </Link>
         </nav>
 
         {/* Mobile toggle */}
@@ -40,20 +56,29 @@ const Navbar = () => {
 
       {/* Mobile menu */}
       {isOpen && (
-        <div className='md:hidden bg-white border-t px-6 pb-4 space-y-3 text-sm text-gray-700'>
-          <Link href='/' onClick={toggleMenu}>
+        <div className='md:hidden bg-white border-t px-6 pb-4 space-y-3 text-sm text-gray-700 flex flex-col py-4'>
+          <Link href='/' onClick={toggleMenu} className={linkClass('/')}>
             Home
           </Link>
-          <Link href='/services' onClick={toggleMenu}>
+          <Link
+            href='/services'
+            onClick={toggleMenu}
+            className={linkClass('/services')}
+          >
             Services
           </Link>
-          <Link href='/portfolio' onClick={toggleMenu}>
-            Portfolio
-          </Link>
-          <Link href='/about' onClick={toggleMenu}>
+          <Link
+            href='/about'
+            onClick={toggleMenu}
+            className={linkClass('/about')}
+          >
             About
           </Link>
-          <Link href='/contact' onClick={toggleMenu}>
+          <Link
+            href='/contact'
+            onClick={toggleMenu}
+            className={linkClass('/contact')}
+          >
             Contact
           </Link>
         </div>

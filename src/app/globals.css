@@ -2,6 +2,7 @@
 
 :root {
   --color-primary: #f24e42; /* GDMT Red */
+  --color-primary-light: #ffebee;
   --color-background: #ffffff; /* Pure White */
   --color-foreground: #1f1f1f;
   --color-primary-hover: #d43f36; /* optional darker hover shade */
