@@ -1,7 +1,14 @@
 'use client';
 
 import { contactServices } from '@/data/contactData';
+import toast from 'react-hot-toast';
 import { useState } from 'react';
+
+type FormErrors = {
+  name?: string;
+  email?: string;
+  query?: string;
+};
 
 const ContactPage = () => {
   const [form, setForm] = useState({
@@ -11,6 +18,9 @@ const ContactPage = () => {
     query: '',
     services: [] as string[],
   });
+
+  const [errors, setErrors] = useState<FormErrors>({});
+  const [isSubmitting, setIsSubmitting] = useState(false);
 
   const toggleService = (service: string) => {
     setForm((prev) => ({
@@ -27,10 +37,61 @@ const ContactPage = () => {
     setForm({ ...form, [e.target.name]: e.target.value });
   };
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const validate = () => {
+    const newErrors: Record<string, string> = {};
+
+    if (!form.name.trim() || form.name.length < 2) {
+      newErrors.name = 'Name must be at least 2 characters.';
+    }
+
+    if (!form.email || !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(form.email)) {
+      newErrors.email = 'Enter a valid email.';
+    }
+
+    if (!form.query || form.query.length < 10) {
+      newErrors.query = 'Message should be at least 10 characters.';
+    }
+
+    return newErrors;
+  };
+
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    console.log('Form Submitted:', form);
-    // Add actual form submission logic here
+    const validationErrors = validate();
+
+    if (Object.keys(validationErrors).length > 0) {
+      setErrors(validationErrors);
+      return;
+    }
+
+    setErrors({});
+    setIsSubmitting(true);
+
+    try {
+      const response = await fetch('/api/contact', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(form),
+      });
+
+      if (response.ok) {
+        toast.success('Thank you! Your message has been sent.');
+        setForm({
+          name: '',
+          email: '',
+          phone: '',
+          query: '',
+          services: [],
+        });
+      } else {
+        toast.error('Something went wrong. Please try again later.');
+      }
+    } catch (err) {
+      console.error(err);
+      toast.error('Failed to send message. Please try again.');
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   return (
@@ -58,10 +119,14 @@ const ContactPage = () => {
               name='name'
               id='name'
               required
+              value={form.name}
               placeholder='Your full name'
               className='w-full p-3 border border-gray-300 rounded-md focus:ring-[var(--color-primary)] focus:border-[var(--color-primary)]'
               onChange={handleChange}
             />
+            {errors.name && (
+              <p className='text-red-500 text-sm'>{errors.name}</p>
+            )}
           </div>
 
           <div>
@@ -73,10 +138,14 @@ const ContactPage = () => {
               name='email'
               id='email'
               required
+              value={form.email}
               placeholder='you@example.com'
               className='w-full p-3 border border-gray-300 rounded-md focus:ring-[var(--color-primary)] focus:border-[var(--color-primary)]'
               onChange={handleChange}
             />
+            {errors.email && (
+              <p className='text-red-500 text-sm'>{errors.email}</p>
+            )}
           </div>
 
           <div>
@@ -87,6 +156,7 @@ const ContactPage = () => {
               type='tel'
               name='phone'
               id='phone'
+              value={form.phone}
               placeholder='Optional'
               className='w-full p-3 border border-gray-300 rounded-md focus:ring-[var(--color-primary)] focus:border-[var(--color-primary)]'
               onChange={handleChange}
@@ -101,10 +171,14 @@ const ContactPage = () => {
               name='query'
               id='query'
               rows={4}
+              value={form.query}
               placeholder='How can we help you?'
               className='w-full p-3 border border-gray-300 rounded-md focus:ring-[var(--color-primary)] focus:border-[var(--color-primary)]'
               onChange={handleChange}
             />
+            {errors.query && (
+              <p className='text-red-500 text-sm'>{errors.query}</p>
+            )}
           </div>
 
           <div>
@@ -131,9 +205,10 @@ const ContactPage = () => {
 
           <button
             type='submit'
-            className='bg-[var(--color-primary)] text-white px-6 py-3 rounded-md font-medium hover:bg-red-600 transition'
+            disabled={isSubmitting}
+            className='bg-[var(--color-primary)] text-white px-6 py-3 rounded-md font-medium hover:bg-red-600 transition disabled:opacity-50 disabled:cursor-not-allowed'
           >
-            Submit
+            {isSubmitting ? 'Sending...' : 'Submit'}
           </button>
         </form>
 
