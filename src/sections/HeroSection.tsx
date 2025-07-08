@@ -1,30 +1,35 @@
 'use client';
 
+import { useEffect, useRef, useState } from 'react';
+
+import HeroContent from '@/components/HeroContent';
+import HeroVideoBackground from '@/components/HeroVideoBackground';
+
 const HeroSection = () => {
+  const sectionRef = useRef<HTMLElement>(null);
+  const [isVisible, setIsVisible] = useState(false);
+
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        setIsVisible(entry.isIntersecting);
+      },
+      { threshold: 0.5 }
+    );
+
+    if (sectionRef.current) observer.observe(sectionRef.current);
+    return () => {
+      if (sectionRef.current) observer.unobserve(sectionRef.current);
+    };
+  }, []);
+
   return (
-    <section className='min-h-[90vh] bg-[var(--color-background)] text-[var(--color-foreground)] flex flex-col justify-center items-center text-center px-6 py-20'>
-      <h1 className='text-4xl md:text-6xl font-bold mb-4'>
-        Welcome to{' '}
-        <span className='text-[var(--color-primary)]'>GDMT Creations</span>
-      </h1>
-
-      <p className='text-xl md:text-2xl mb-6 text-gray-700'>
-        Digital Ideas. Designed to Deliver.
-      </p>
-
-      <p className='max-w-2xl text-lg text-gray-600 mb-8'>
-        We are a full-spectrum creative agency empowering businesses to grow,
-        connect, and thrive in the digital world. Whether you’re building a
-        brand or scaling a business, our team transforms ideas into strategic,
-        high-impact outcomes.
-      </p>
-
-      <a
-        href='/contact'
-        className='bg-[var(--color-primary)] text-white px-6 py-3 rounded-lg font-medium text-lg hover:brightness-110 transition'
-      >
-        Let’s Collaborate
-      </a>
+    <section
+      ref={sectionRef}
+      className='relative min-h-[90vh] w-full overflow-hidden bg-black text-white'
+    >
+      <HeroVideoBackground isVisible={isVisible} />
+      <HeroContent isVisible={isVisible} />
     </section>
   );
 };
