@@ -17,9 +17,10 @@ const HeroSection = () => {
       { threshold: 0.5 }
     );
 
-    if (sectionRef.current) observer.observe(sectionRef.current);
+    const el = sectionRef.current;
+    if (el) observer.observe(el);
     return () => {
-      if (sectionRef.current) observer.unobserve(sectionRef.current);
+      if (el) observer.unobserve(el);
     };
   }, []);
 

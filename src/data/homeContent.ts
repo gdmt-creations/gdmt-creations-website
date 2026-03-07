@@ -58,7 +58,7 @@ export const reasons = [
   ],
   [
     'Tailored Solutions',
-    'We don’t do cookie-cutter. Every project is built from scratch to align with your unique goals.',
+    'We don\'t do cookie-cutter. Every project is built from scratch to align with your unique goals.',
   ],
   [
     'Creativity Meets Strategy',
@@ -74,9 +74,40 @@ export const reasons = [
   ],
 ];
 
-export const testimonials = [
-  '“Working with GDMT Creations on our rebranding project was a game-changer. Their design team captured our brand essence perfectly — modern, clean, and impactful.”',
-  '“We sent over hours of raw footage and got back a polished, high-energy brand film with seamless transitions and dynamic motion graphics.”',
-  '“GDMT Creations built our entire website from scratch. It’s responsive, fast, and reflects our identity beautifully — both visually and functionally.”',
-  '“Since we partnered with GDMT Creations, our social media presence has grown significantly. Content quality and engagement have both improved noticeably.”',
+export interface Testimonial {
+  name: string;
+  designation: string;
+  photo: string;
+  quote: string;
+}
+
+export const testimonials: Testimonial[] = [
+  {
+    name: 'Rahul Mehta',
+    designation: 'Founder, 10x Income',
+    photo: 'https://ui-avatars.com/api/?name=Rahul+Mehta&background=6c63ff&color=fff&size=128&bold=true',
+    quote:
+      'Working with Saarva on our rebranding project was a game-changer. Their design team captured our brand essence perfectly — modern, clean, and impactful.',
+  },
+  {
+    name: 'Ankit Sharma',
+    designation: 'CEO, Okinawa Autotech',
+    photo: 'https://ui-avatars.com/api/?name=Ankit+Sharma&background=e63946&color=fff&size=128&bold=true',
+    quote:
+      'We sent over hours of raw footage and got back a polished, high-energy brand film with seamless transitions and dynamic motion graphics.',
+  },
+  {
+    name: 'Priya Nair',
+    designation: 'Director, Woodlance Interiors',
+    photo: 'https://ui-avatars.com/api/?name=Priya+Nair&background=2a9d8f&color=fff&size=128&bold=true',
+    quote:
+      'Saarva built our entire website from scratch. It\'s responsive, fast, and reflects our identity beautifully — both visually and functionally.',
+  },
+  {
+    name: 'Deepak Verma',
+    designation: 'Social Media Head, AstroTalk',
+    photo: 'https://ui-avatars.com/api/?name=Deepak+Verma&background=f4a261&color=fff&size=128&bold=true',
+    quote:
+      'Since we partnered with Saarva, our social media presence has grown significantly. Content quality and engagement have both improved noticeably.',
+  },
 ];

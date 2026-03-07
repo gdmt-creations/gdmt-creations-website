@@ -18,7 +18,7 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: 'GDMT Creations – Creative & Tech Studio',
+  title: 'Saarva – Creative & Tech Studio',
   description:
     'We design, develop, and deliver impact-driven creative & digital experiences.',
   icons: {

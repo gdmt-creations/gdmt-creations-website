@@ -25,13 +25,13 @@ const Navbar = () => {
         <Link href='/' className='flex items-center space-x-2'>
           <Image
             src='/assets/images/GDMT-creations-logo.jpg'
-            alt='GDMT Creations Logo'
+            alt='Saarva Logo'
             width={40}
             height={40}
             className='rounded-sm'
           />
           <span className='text-xl font-bold text-[var(--color-primary)]'>
-            GDMT Creations
+            Saarva
           </span>
         </Link>
 
@@ -45,6 +45,9 @@ const Navbar = () => {
           </Link>
           <Link href='/about' className={linkClass('/about')}>
             About
+          </Link>
+          <Link href='/portfolio' className={linkClass('/portfolio')}>
+            Portfolio
           </Link>
           <Link href='/contact' className={linkClass('/contact')}>
             Contact
@@ -80,6 +83,13 @@ const Navbar = () => {
             className={linkClass('/about')}
           >
             About
+          </Link>
+          <Link
+            href='/portfolio'
+            onClick={toggleMenu}
+            className={linkClass('/portfolio')}
+          >
+            Portfolio
           </Link>
           <Link
             href='/contact'
