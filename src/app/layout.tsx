@@ -22,8 +22,8 @@ export const metadata: Metadata = {
   description:
     'We design, develop, and deliver impact-driven creative & digital experiences.',
   icons: {
-    icon: '/assets/images/logo2.svg',
-    apple: '/assets/images/logo2.svg',
+    icon: '/icons/icon-192.png',
+    apple: '/apple-touch-icon.png',
   },
   manifest: '/manifest.json',
   other: {
