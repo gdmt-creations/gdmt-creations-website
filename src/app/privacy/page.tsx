@@ -17,7 +17,7 @@ export default function PrivacyPolicyPage() {
             Saarva IT and Digital Services LLP (&quot;Saarva,&quot; &quot;we,&quot; &quot;our,&quot; or &quot;us&quot;) respects your privacy and is committed to protecting your personal data.
           </p>
           <p className='text-sm text-gray-500 mt-4'>
-            Effective Date: March 31, 2026 &nbsp;|&nbsp; Last Updated: March 31, 2026
+            Effective Date: 31 March 2026 &nbsp;|&nbsp; Last Updated: 31 March 2026
           </p>
         </div>
       </section>
@@ -32,17 +32,17 @@ export default function PrivacyPolicyPage() {
           <h2>1. Information We Collect</h2>
           <p>We may collect the following categories of information:</p>
           <ul>
-            <li><strong>Personal information you provide directly:</strong> full name, email address, phone number, company name, project requirements, inquiry details, and onboarding, billing, or contractual information.</li>
-            <li><strong>Information collected automatically:</strong> IP address, browser type and version, device type, operating system, referral source, pages visited, time spent on the website, and cookies or similar tracking data.</li>
-            <li><strong>Business and project-related materials:</strong> creative briefs, brand assets, media files, feedback, and other materials necessary to perform the agreed scope of work.</li>
+            <li><strong>Personal information you provide directly:</strong> full name, email address, phone number, company name, project requirements, inquiry details, billing information, and contractual information.</li>
+            <li><strong>Information collected automatically:</strong> IP address, browser type and version, device type, operating system, referral source, pages visited, and time spent on the website.</li>
+            <li><strong>Business and project-related materials:</strong> creative briefs, brand assets, media files, feedback, and other materials needed to perform the agreed scope of work.</li>
           </ul>
 
           <h2>2. How We Use Your Information</h2>
           <p>We may use your information to:</p>
           <ul>
-            <li>Respond to inquiries and communicate with you</li>
+            <li>Respond to inquiries</li>
             <li>Evaluate business opportunities</li>
-            <li>Provide and improve our services</li>
+            <li>Provide and improve services</li>
             <li>Create proposals and invoices</li>
             <li>Operate and secure the website</li>
             <li>Maintain internal records</li>
@@ -52,7 +52,10 @@ export default function PrivacyPolicyPage() {
 
           <h2>3. Cookies and Tracking Technologies</h2>
           <p>
-            We may use cookies, analytics tools, and similar technologies to understand website traffic, improve user experience, measure marketing performance, and maintain website functionality. You may disable cookies through your browser settings, although some parts of the website may not function properly if cookies are disabled.
+            We may use cookies, analytics tools, and similar technologies to understand website traffic, improve user experience, measure marketing performance, and maintain website functionality.
+          </p>
+          <p>
+            You may choose to disable cookies through your browser settings, although some parts of the website may not function properly if cookies are disabled.
           </p>
 
           <h2>4. Legal Basis / Consent</h2>
@@ -66,26 +69,28 @@ export default function PrivacyPolicyPage() {
           </ul>
 
           <h2>5. Sharing of Information</h2>
+          <p>We do not sell your personal data.</p>
           <p>
-            We do not sell your personal data. We may share information only when reasonably necessary with employees, consultants, service providers, cloud or software vendors, legal or accounting advisors, government or regulatory authorities where required by law, or successors in the event of a restructuring or business transfer.
+            We may share information only when reasonably necessary with employees, consultants, authorized team members, service providers, legal or compliance advisors, government or regulatory authorities where required by law, and successors in the event of a restructuring, merger, or transfer.
           </p>
 
           <h2>6. Data Retention</h2>
           <p>
-            We retain personal data only for as long as reasonably necessary to respond to inquiries, fulfil contractual obligations, maintain records, resolve disputes, enforce agreements, or comply with tax, legal, or regulatory obligations.
+            We retain personal data only for as long as reasonably necessary for responding to inquiries, fulfilling contractual obligations, maintaining records, resolving disputes, enforcing agreements, or meeting legal, tax, and regulatory obligations.
           </p>
 
           <h2>7. Data Security</h2>
           <p>
-            We use reasonable technical, organizational, and administrative safeguards to protect information against unauthorized access, disclosure, alteration, misuse, or destruction. However, no website, transmission method, or storage system can be guaranteed to be fully secure.
+            We use reasonable technical, organizational, and administrative safeguards to protect information against unauthorized access, disclosure, alteration, misuse, or destruction. However, no website, database, server, transmission method, or storage system can be guaranteed to be fully secure.
           </p>
 
           <h2>8. Your Rights</h2>
           <p>Subject to applicable law, you may have the right to:</p>
           <ul>
-            <li>Request access, correction, updating, or erasure of your personal data</li>
+            <li>Request access to your personal data</li>
+            <li>Request correction or erasure where appropriate</li>
             <li>Withdraw consent where processing is based on consent</li>
-            <li>Contact us with concerns regarding data processing</li>
+            <li>Contact us with concerns relating to the processing of your data</li>
           </ul>
 
           <h2>9. Third-Party Links and Platforms</h2>
@@ -108,9 +113,9 @@ export default function PrivacyPolicyPage() {
           <div className='bg-gray-50 rounded-xl p-6 not-prose mb-6'>
             <p className='font-semibold text-gray-900 mb-2'>Saarva IT and Digital Services LLP</p>
             <ul className='space-y-1 text-sm text-gray-600'>
-              <li>📧 Email: <a href='mailto:hello@saarva.co.in' className='text-[var(--color-primary)] hover:underline'>hello@saarva.co.in</a></li>
-              <li>📞 Phone: <a href='tel:+919899115721' className='text-[var(--color-primary)] hover:underline'>+91-98991 15721</a></li>
-              <li>📍 Address: Gurugram, Haryana, India</li>
+              <li>📧 Email: <a href='mailto:Saarva.info@gmail.com' className='text-[var(--color-primary)] hover:underline'>Saarva.info@gmail.com</a></li>
+              <li>📞 Phone: <a href='tel:+918851055230' className='text-[var(--color-primary)] hover:underline'>8851055230</a></li>
+              <li>📍 Address: First Floor, Plot 737, Sector 9A, Gurugram, Haryana, 122001</li>
             </ul>
           </div>
 

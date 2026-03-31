@@ -31,7 +31,7 @@ export const socialLinks = [
   },
   {
     label: 'X (Twitter)',
-    href: 'https://x.com/saarva',
+    href: 'https://x.com/Saarva_Official',
     icon: 'x',
   },
   {
@@ -39,9 +39,9 @@ export const socialLinks = [
     href: 'https://www.linkedin.com/company/saarvaofficial/',
     icon: 'li',
   },
-  {
-    label: 'Facebook',
-    href: 'https://www.facebook.com/saarva',
-    icon: 'fb',
-  },
+  // {
+  //   label: 'Facebook',
+  //   href: 'https://www.facebook.com/saarva',
+  //   icon: 'fb',
+  // },
 ];

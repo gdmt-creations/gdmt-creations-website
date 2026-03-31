@@ -14,10 +14,10 @@ export default function LicensesPage() {
           </div>
           <h1 className='text-4xl md:text-5xl font-bold mb-4'>Licenses &amp; Legal Disclosures</h1>
           <p className='text-gray-400 max-w-2xl mx-auto'>
-            Transparency in legal and compliance disclosures from Saarva IT and Digital Services LLP.
+            Saarva IT and Digital Services LLP is committed to lawful, ethical, and transparent business operations. This page provides general legal and compliance disclosures relating to our website and business operations.
           </p>
           <p className='text-sm text-gray-500 mt-4'>
-            Effective Date: March 31, 2026 &nbsp;|&nbsp; Last Updated: March 31, 2026
+            Effective Date: 31 March 2026 &nbsp;|&nbsp; Last Updated: 31 March 2026
           </p>
         </div>
       </section>
@@ -31,9 +31,12 @@ export default function LicensesPage() {
             <ul className='space-y-2 text-sm text-gray-600'>
               <li><strong className='text-gray-900'>Legal Name:</strong> Saarva IT and Digital Services LLP</li>
               <li><strong className='text-gray-900'>Website:</strong> <a href='https://saarva.co.in' className='text-[var(--color-primary)] hover:underline'>saarva.co.in</a></li>
-              <li><strong className='text-gray-900'>Email:</strong> <a href='mailto:hello@saarva.co.in' className='text-[var(--color-primary)] hover:underline'>hello@saarva.co.in</a></li>
-              <li><strong className='text-gray-900'>Phone:</strong> <a href='tel:+919899115721' className='text-[var(--color-primary)] hover:underline'>+91-98991 15721</a></li>
-              <li><strong className='text-gray-900'>Address:</strong> Gurugram, Haryana, India</li>
+              <li><strong className='text-gray-900'>Email:</strong> <a href='mailto:Saarva.info@gmail.com' className='text-[var(--color-primary)] hover:underline'>Saarva.info@gmail.com</a></li>
+              <li><strong className='text-gray-900'>Phone:</strong> <a href='tel:+918851055230' className='text-[var(--color-primary)] hover:underline'>8851055230</a></li>
+              <li><strong className='text-gray-900'>Registered Address:</strong> First Floor, Plot 737, Sector 9A, Gurugram, Haryana, 122001</li>
+              <li><strong className='text-gray-900'>Jurisdiction:</strong> Gurugram, Haryana, India, 122001</li>
+              <li><strong className='text-gray-900'>LLPIN / Registration Number:</strong> ACS-1419</li>
+              <li><strong className='text-gray-900'>GSTIN:</strong> Not Acquired</li>
             </ul>
           </div>
 
@@ -44,7 +47,10 @@ export default function LicensesPage() {
 
           <h2>3. Intellectual Property Notice</h2>
           <p>
-            All original website content, branding, design elements, written material, and proprietary creative assets displayed on this website are owned by or licensed to Saarva unless otherwise stated. Third-party logos, trademarks, software names, platform names, and brand references remain the property of their respective owners and are used only for identification, compatibility, portfolio reference, or informational purposes where applicable.
+            All original website content, branding, design elements, written material, and proprietary creative assets displayed on this website are owned by or licensed to Saarva unless otherwise stated.
+          </p>
+          <p>
+            Third-party logos, trademarks, software names, platform names, and brand references remain the property of their respective owners and are used, where applicable, for identification, compatibility, portfolio reference, or informational purposes only.
           </p>
 
           <h2>4. Third-Party Tools and Services</h2>
@@ -59,7 +65,7 @@ export default function LicensesPage() {
             <li>Social media integrations</li>
           </ul>
           <p>
-            We do not claim ownership over third-party software, trademarks, or systems. Their use is subject to their own respective terms and policies.
+            We do not claim ownership over third-party software, trademarks, or systems.
           </p>
 
           <h2>5. Regulatory and Legal Compliance</h2>
@@ -69,12 +75,12 @@ export default function LicensesPage() {
 
           <h2>6. No Misrepresentation of Licenses</h2>
           <p>
-            Unless expressly stated on this page, Saarva does not claim any government approval, certification, registration, accreditation, or sector-specific license beyond what it actually holds. Any statutory registrations, tax registrations, or business identifiers are listed only after verification.
+            Unless expressly stated on this page, Saarva does not claim any government approval, certification, registration, accreditation, or sector-specific license beyond what it actually holds. Any statutory registrations, tax registrations, or business identifiers should be listed only after verification.
           </p>
 
           <h2>7. Client and Portfolio References</h2>
           <p>
-            Any client names, brand references, sample works, testimonials, or portfolio items displayed on the website are shown subject to applicable permission, contract terms, public availability, or fair business use. If any rightful owner believes a reference has been used incorrectly, they may contact Saarva for review.
+            Any client names, brand references, sample works, testimonials, or portfolio items displayed on the website are shown subject to applicable permission, contract terms, public availability, or fair business use. If any rightful owner believes a reference has been used incorrectly, they may contact us for review.
           </p>
 
           <h2>8. Reporting Concerns</h2>
@@ -82,9 +88,9 @@ export default function LicensesPage() {
           <div className='bg-gray-50 rounded-xl p-6 not-prose mb-6'>
             <p className='font-semibold text-gray-900 mb-2'>Saarva IT and Digital Services LLP</p>
             <ul className='space-y-1 text-sm text-gray-600'>
-              <li>📧 Email: <a href='mailto:hello@saarva.co.in' className='text-[var(--color-primary)] hover:underline'>hello@saarva.co.in</a></li>
-              <li>📞 Phone: <a href='tel:+919899115721' className='text-[var(--color-primary)] hover:underline'>+91-98991 15721</a></li>
-              <li>📍 Address: Gurugram, Haryana, India</li>
+              <li>📧 Email: <a href='mailto:Saarva.info@gmail.com' className='text-[var(--color-primary)] hover:underline'>Saarva.info@gmail.com</a></li>
+              <li>📞 Phone: <a href='tel:+918851055230' className='text-[var(--color-primary)] hover:underline'>8851055230</a></li>
+              <li>📍 Address: First Floor, Plot 737, Sector 9A, Gurugram, Haryana, 122001</li>
             </ul>
           </div>
         </div>
