@@ -32,7 +32,7 @@ const DetailPageWrapper = ({
     <section className='bg-white text-gray-900'>
       {/* Sticky Back Button */}
       <div
-        className={`sticky top-16 z-40 bg-white px-4 sm:px-6 py-3 sm:py-4 border-b border-gray-100 shadow-sm transition-all duration-300 ${
+        className={`sticky top-14 md:top-16 z-40 bg-white px-4 sm:px-6 py-3 sm:py-4 border-b border-gray-100 shadow-sm transition-all duration-300 ${
           showSticky
             ? 'opacity-100 translate-y-0'
             : 'opacity-0 -translate-y-4 pointer-events-none'

@@ -1,3 +1,4 @@
+import BottomTabBar from '@/components/BottomTabBar';
 import Footer from '@/components/Footer';
 import Navbar from '@/components/Navbar';
 
@@ -9,8 +10,10 @@ export default function SiteLayout({
   return (
     <div className='overflow-x-clip'>
       <Navbar />
-      <main className='pt-16'>{children}</main>
+      {/* pt-14 for mobile (shorter navbar), md:pt-16 for desktop */}
+      <main className='pt-14 md:pt-16 pb-[72px] md:pb-0'>{children}</main>
       <Footer />
+      <BottomTabBar />
     </div>
   );
 }

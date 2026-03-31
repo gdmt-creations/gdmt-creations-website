@@ -527,7 +527,7 @@ export default function PortfolioPage() {
       </section>
 
       {/* ── Sticky Filter Tabs ── */}
-      <section className="sticky top-16 z-30 bg-white/95 backdrop-blur border-b border-gray-200 shadow-sm overflow-hidden">
+      <section className="sticky top-14 md:top-16 z-30 bg-white/95 backdrop-blur border-b border-gray-200 shadow-sm overflow-hidden">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 overflow-x-auto scrollbar-hide">
           <div className="flex gap-1.5 py-3 min-w-max">
             {serviceFilters.map((filter) => (

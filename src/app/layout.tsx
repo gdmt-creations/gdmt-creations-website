@@ -23,7 +23,23 @@ export const metadata: Metadata = {
     'We design, develop, and deliver impact-driven creative & digital experiences.',
   icons: {
     icon: '/assets/images/logo2.svg',
+    apple: '/assets/images/logo2.svg',
   },
+  manifest: '/manifest.json',
+  other: {
+    'mobile-web-app-capable': 'yes',
+    'apple-mobile-web-app-capable': 'yes',
+    'apple-mobile-web-app-status-bar-style': 'black-translucent',
+    'apple-mobile-web-app-title': 'Saarva',
+  },
+};
+
+export const viewport = {
+  themeColor: '#F16541',
+  width: 'device-width',
+  initialScale: 1,
+  maximumScale: 1,
+  viewportFit: 'cover' as const,
 };
 
 export default function RootLayout({
@@ -36,6 +52,17 @@ export default function RootLayout({
       <body className={`${geistSans.variable} ${geistMono.variable} font-sans`}>
         <Toaster position='top-center' />
         {children}
+        <script
+          dangerouslySetInnerHTML={{
+            __html: `
+              if ('serviceWorker' in navigator) {
+                window.addEventListener('load', () => {
+                  navigator.serviceWorker.register('/sw.js');
+                });
+              }
+            `,
+          }}
+        />
       </body>
     </html>
   );

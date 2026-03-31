@@ -40,6 +40,9 @@ body {
   body {
     padding-bottom: env(safe-area-inset-bottom);
   }
+  .pb-safe {
+    padding-bottom: env(safe-area-inset-bottom, 0px);
+  }
 }
 
 /* Smoother scrolling for touch */
@@ -54,4 +57,40 @@ body {
 }
 .scrollbar-hide::-webkit-scrollbar {
   display: none;
+}
+
+/* ── PWA App Feel ── */
+
+/* Standalone mode: hide address bar chrome */
+@media all and (display-mode: standalone) {
+  body {
+    -webkit-user-select: none;
+    user-select: none;
+  }
+  /* Allow text selection only on content */
+  p, span, h1, h2, h3, h4, h5, h6, li, td, th, a, blockquote {
+    -webkit-user-select: text;
+    user-select: text;
+  }
+}
+
+/* Prevent rubber-band bounce on iOS */
+html, body {
+  overscroll-behavior-y: none;
+}
+
+/* Page transition fade-in */
+@keyframes fadeSlideIn {
+  from {
+    opacity: 0;
+    transform: translateY(6px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+main > * {
+  animation: fadeSlideIn 0.3s ease-out;
 }

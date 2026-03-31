@@ -39,7 +39,7 @@ const Navbar = () => {
 
   return (
     <>
-      <header className='bg-white/95 backdrop-blur-md fixed top-0 left-0 right-0 z-50 h-16 border-b border-gray-100'>
+      <header className='bg-white/95 backdrop-blur-md fixed top-0 left-0 right-0 z-50 h-14 md:h-16 border-b border-gray-100'>
         <div className='max-w-7xl mx-auto px-4 sm:px-6 h-full flex justify-between items-center'>
           {/* Logo */}
           <Link href='/' className='flex items-center'>
@@ -49,7 +49,7 @@ const Navbar = () => {
               width={130}
               height={42}
               priority
-              className='w-[110px] sm:w-[130px] h-auto'
+              className='w-[100px] md:w-[130px] h-auto'
             />
           </Link>
 
@@ -70,10 +70,10 @@ const Navbar = () => {
             ))}
           </nav>
 
-          {/* Mobile toggle */}
+          {/* Mobile menu button — hidden, bottom tab bar handles mobile nav */}
           <button
             onClick={() => setIsOpen(!isOpen)}
-            className='md:hidden w-10 h-10 flex items-center justify-center rounded-xl text-gray-700 active:bg-gray-100 transition-colors'
+            className='hidden'
             aria-label='Toggle Menu'
           >
             {isOpen ? <X className='w-5 h-5' /> : <Menu className='w-5 h-5' />}

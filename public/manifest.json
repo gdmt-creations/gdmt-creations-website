@@ -1,0 +1,22 @@
+{
+  "name": "Saarva – Creative & Tech Studio",
+  "short_name": "Saarva",
+  "description": "Design. Develop. Deliver. A full-spectrum creative studio crafting digital experiences.",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#ffffff",
+  "theme_color": "#F16541",
+  "orientation": "portrait-primary",
+  "scope": "/",
+  "icons": [
+    {
+      "src": "/assets/images/logo2.svg",
+      "sizes": "any",
+      "type": "image/svg+xml",
+      "purpose": "any maskable"
+    }
+  ],
+  "categories": ["business", "productivity"],
+  "lang": "en",
+  "dir": "ltr"
+}
