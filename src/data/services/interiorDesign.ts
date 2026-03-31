@@ -39,5 +39,5 @@ export const interiorDesignData = {
     'Execution & Final Handover',
   ],
   testimonial:
-    '“Seeing our space come to life through GDMT’s 3D renders was incredible. Their ideas were practical yet elegant — and the final result? Just as visualized.”',
+    '"Seeing our space come to life through Saarva\'s 3D renders was incredible. Their ideas were practical yet elegant — and the final result? Just as visualized."',
 };

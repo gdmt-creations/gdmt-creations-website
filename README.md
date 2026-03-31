@@ -1,6 +1,6 @@
-# GDMT Creations Website
+# Saarva Website
 
-This is the official website for **GDMT Creations**, a digital studio focused on storytelling, creative design, and multimedia innovation.
+This is the official website for **Saarva** (Saarva IT & Digital Services LLP), a digital studio focused on storytelling, creative design, and multimedia innovation.
 
 ## 🚀 Tech Stack
 

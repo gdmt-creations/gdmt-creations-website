@@ -9,7 +9,7 @@ export const quickLinks = [
 export const legalLinks = [
   { label: 'Privacy Policy', href: '/privacy' },
   { label: 'Terms & Conditions', href: '/terms' },
-  { label: 'Licenses', href: '/licenses' },
+  { label: 'Licenses & Legal Disclosures', href: '/licenses' },
 ];
 
 export const contactInfo = {
@@ -21,12 +21,12 @@ export const contactInfo = {
 export const socialLinks = [
   {
     label: 'YouTube',
-    href: 'https://www.youtube.com/@10xincome',
+    href: 'https://www.youtube.com/@Saarva.foryou',
     icon: 'yt',
   },
   {
     label: 'Instagram',
-    href: 'https://www.instagram.com/psymanis/',
+    href: 'https://www.instagram.com/saarva.01?igsh=MWcyY2wyaHEyczBwMw==',
     icon: 'ig',
   },
   {
@@ -36,13 +36,8 @@ export const socialLinks = [
   },
   {
     label: 'LinkedIn',
-    href: 'https://www.linkedin.com/company/saarva',
+    href: 'https://www.linkedin.com/company/saarvaofficial/',
     icon: 'li',
-  },
-  {
-    label: 'Discord',
-    href: 'https://discord.gg/saarva',
-    icon: 'dc',
   },
   {
     label: 'Facebook',

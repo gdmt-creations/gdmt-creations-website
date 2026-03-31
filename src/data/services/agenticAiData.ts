@@ -1,7 +1,7 @@
 const agenticAiData = {
   title: 'Agentic AI Design & Development',
   intro:
-    'At GDMT Creations, we specialize in designing and developing intelligent AI agents that go beyond task execution—they understand context, make decisions, and act with purpose.',
+    `At Saarva, we specialize in designing and developing intelligent AI agents that go beyond task execution—they understand context, make decisions, and act with purpose.`,
   offerings: [
     {
       title: 'Goal-Driven AI Agent Design',
@@ -39,7 +39,7 @@ const agenticAiData = {
     'Deployment & Evolution – Launch, monitor, and continuously optimize for smarter outcomes',
   ],
   testimonial:
-    '“GDMT Creations helped us build an AI assistant that not only answers queries but intelligently routes, personalizes, and learns. It’s like hiring a 24/7 team member who gets smarter every week.”',
+    `"Saarva helped us build an AI assistant that not only answers queries but intelligently routes, personalizes, and learns. It's like hiring a 24/7 team member who gets smarter every week."`,
   ctaPrimary: {
     label: 'Schedule a Consultation',
     link: '/contact',

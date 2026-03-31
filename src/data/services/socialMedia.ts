@@ -1,7 +1,7 @@
 export const socialMediaService = {
   title: 'Social Media Management & Handling',
   description:
-    'In today’s digital world, your brand doesn’t just exist—it performs online. At GDMT Creations, we help businesses grow, engage, and thrive across all major social media platforms. From strategy and content creation to daily management and analytics, we offer end-to-end services that boost visibility and meaningful audience connection.',
+    `In today's digital world, your brand doesn't just exist—it performs online. At Saarva, we help businesses grow, engage, and thrive across all major social media platforms. From strategy and content creation to daily management and analytics, we offer end-to-end services that boost visibility and meaningful audience connection.`,
   offerings: [
     {
       title: 'Content Strategy & Planning',
@@ -39,7 +39,7 @@ export const socialMediaService = {
     'Analytics & Optimization – Review, refine, and scale success',
   ],
   testimonial:
-    '“We’ve seen a massive improvement in engagement and brand visibility since GDMT Creations took over our social media. Their content is consistently fresh, creative, and aligned with our brand voice.”',
+    `"We've seen a massive improvement in engagement and brand visibility since Saarva took over our social media. Their content is consistently fresh, creative, and aligned with our brand voice."`,
   cta1: { label: 'Get a Social Audit', link: '/contact' },
   cta2: { label: 'Start Managing Your Accounts', link: '/contact' },
 };

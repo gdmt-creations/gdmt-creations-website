@@ -42,12 +42,10 @@ export interface VideoPortfolioItem {
   id: string;
   title: string;
   category: VideoCategory;
-  // youtubeId: specific video ID for embed + thumbnail (fill in when you have the URL)
-  // channelUrl: links out to the client's channel/video
-  // channelThumb: any custom thumbnail image path or external URL to show on the card
   youtubeId?: string;
   channelUrl: string;
   channelThumb?: string; // optional branded card image
+  channelLogo?: string;  // YouTube channel profile picture
   client?: string;
 }
 
@@ -67,6 +65,7 @@ export const videoPortfolio: VideoPortfolioItem[] = [
     category: 'Short Form',
     youtubeId: 'PtLz0ZSKmBM',
     channelUrl: 'https://www.youtube.com/@10xincome',
+    channelLogo: 'https://yt3.googleusercontent.com/BrLkmN_z6kBvh7b90vvWfs5_Cjw8Jbr7XgZ1vcn5vxag-ON7CzOE4ApRj5swtqanrUGsxfNO1w=s88-c-k-c0x00ffffff-no-rj',
     client: '10x Income',
   },
   {
@@ -74,8 +73,8 @@ export const videoPortfolio: VideoPortfolioItem[] = [
     title: 'DJ Fitness – Training Reel',
     category: 'Short Form',
     youtubeId: '',
-    channelThumb: 'https://ui-avatars.com/api/?name=DJ+Fitness&background=e63946&color=fff&size=400&font-size=0.35&bold=true',
     channelUrl: 'https://www.youtube.com/@d_j_fitness',
+    channelLogo: 'https://yt3.googleusercontent.com/J3gMy11Dywb1gTgp7JCEypKlLhQZRWu73CEeJ_KqeLZVZeXr0nO88Yd18JWFp95G5XUA5ggMOQ=s88-c-k-c0x00ffffff-no-rj',
     client: 'DJ Fitness',
   },
   {
@@ -83,8 +82,8 @@ export const videoPortfolio: VideoPortfolioItem[] = [
     title: 'Psymanis – Motivational Short',
     category: 'Short Form',
     youtubeId: '',
-    channelThumb: 'https://ui-avatars.com/api/?name=Psymanis&background=7209b7&color=fff&size=400&font-size=0.35&bold=true',
     channelUrl: 'https://www.youtube.com/@psymanis',
+    channelLogo: 'https://yt3.googleusercontent.com/9qZZ9oMSpqft_YgS7rGbRr7QnfCcqLLK06cmuPJWOddLeYiwCT8rtOEvg9gb_YHbnub-9pfqOQ=s88-c-k-c0x00ffffff-no-rj',
     client: 'Psymanis',
   },
   {
@@ -92,8 +91,8 @@ export const videoPortfolio: VideoPortfolioItem[] = [
     title: 'Internshala – Career Short',
     category: 'Short Form',
     youtubeId: '',
-    channelThumb: 'https://ui-avatars.com/api/?name=Internshala&background=f77f00&color=fff&size=400&font-size=0.35&bold=true',
     channelUrl: 'https://www.youtube.com/@InternshalaOfficial/shorts',
+    channelLogo: 'https://yt3.googleusercontent.com/foVCTywFAyUZG05GpiGEAJhgOv7UFcgm-ymCTAxXg85tMvc506VvSUo4xsbsAavj1DrTbaqTW10=s88-c-k-c0x00ffffff-no-rj',
     client: 'Internshala',
   },
   {
@@ -101,8 +100,8 @@ export const videoPortfolio: VideoPortfolioItem[] = [
     title: 'House & Home – Interior Short',
     category: 'Short Form',
     youtubeId: '',
-    channelThumb: 'https://ui-avatars.com/api/?name=House+Home&background=4cc9f0&color=fff&size=400&font-size=0.35&bold=true',
     channelUrl: 'https://www.youtube.com/@houseandhome/shorts',
+    channelLogo: 'https://yt3.googleusercontent.com/Ynn_jMb82mnlsObW4aH_gEQWMmX5gO7e_8WW44Av-zWbY6XSN8ggmeUEwd0oKfKrcELYWS86MQ=s88-c-k-c0x00ffffff-no-rj',
     client: 'House & Home',
   },
   {
@@ -110,8 +109,8 @@ export const videoPortfolio: VideoPortfolioItem[] = [
     title: 'Mr Nightmare – Horror Short',
     category: 'Short Form',
     youtubeId: '',
-    channelThumb: 'https://ui-avatars.com/api/?name=Mr+Nightmare&background=1a1a2e&color=fff&size=400&font-size=0.35&bold=true',
     channelUrl: 'https://www.youtube.com/@mrnightmare/shorts',
+    channelLogo: 'https://yt3.googleusercontent.com/UIN373LUgluD-ULTivrB4QOk-FYRaDZ4PwYmPUvXD890NrH4lqQLro48Dxv4rF2mu_rL3KY=s88-c-k-c0x00ffffff-no-rj',
     client: 'Mr Nightmare',
   },
   {
@@ -119,8 +118,8 @@ export const videoPortfolio: VideoPortfolioItem[] = [
     title: 'Anime Balls Deep – Anime Short',
     category: 'Short Form',
     youtubeId: '',
-    channelThumb: 'https://ui-avatars.com/api/?name=Anime+Balls+Deep&background=560bad&color=fff&size=400&font-size=0.35&bold=true',
     channelUrl: 'https://www.youtube.com/@animeballsdeep/shorts',
+    channelLogo: 'https://yt3.googleusercontent.com/TZNWAGM0_afmUBX_7bqUYnQkCOjkjS1120AlaodOaEbKcZFT_pig4Na_ayGbdufT2N-l3uX7-A=s88-c-k-c0x00ffffff-no-rj',
     client: 'Anime Balls Deep',
   },
 
@@ -130,8 +129,8 @@ export const videoPortfolio: VideoPortfolioItem[] = [
     title: 'Okinawa Autotech – Brand Film',
     category: 'Long Form',
     youtubeId: '',
-    channelThumb: 'https://ui-avatars.com/api/?name=Okinawa+Autotech&background=0d1b2a&color=fff&size=400&font-size=0.35&bold=true',
     channelUrl: 'https://www.youtube.com/@OkinawaAutotech',
+    channelLogo: 'https://yt3.googleusercontent.com/N3yzacpy98Wa97c1P_4A6nxgl3fNOqo3gTBsGYX66tyMeP60SZ2Cvz4LP99se-BiWASrSoft=s88-c-k-c0x00ffffff-no-rj',
     client: 'Okinawa Autotech',
   },
   {
@@ -139,8 +138,8 @@ export const videoPortfolio: VideoPortfolioItem[] = [
     title: 'ComicVerse – Review Video',
     category: 'Long Form',
     youtubeId: '',
-    channelThumb: 'https://ui-avatars.com/api/?name=ComicVerse&background=d62828&color=fff&size=400&font-size=0.35&bold=true',
     channelUrl: 'https://www.youtube.com/@comicverseog',
+    channelLogo: 'https://yt3.googleusercontent.com/i6nLvd7o4TIGxjxSEzQmhi0A03jnH1t3EqtF-V8NibxQPQaPTIu19Sfr-BPNT4io34b19_Vptg=s88-c-k-c0x00ffffff-no-rj',
     client: 'ComicVerse OG',
   },
   {
@@ -148,8 +147,8 @@ export const videoPortfolio: VideoPortfolioItem[] = [
     title: 'Share.Market – Explainer',
     category: 'Long Form',
     youtubeId: '',
-    channelThumb: 'https://ui-avatars.com/api/?name=Share+Market&background=2dc653&color=fff&size=400&font-size=0.35&bold=true',
     channelUrl: 'https://www.youtube.com/@SharedotMarket',
+    channelLogo: 'https://yt3.googleusercontent.com/fOQru5sobyEHfjZ3XwdO_EZSl3iUwEx0JT7UPQb0-7uiT26r0t4pBZjamrHrjgwNTJH3g0Y9XaY=s88-c-k-c0x00ffffff-no-rj',
     client: 'Share.Market',
   },
   {
@@ -157,18 +156,9 @@ export const videoPortfolio: VideoPortfolioItem[] = [
     title: 'AstroTalk – Feature Video',
     category: 'Long Form',
     youtubeId: '',
-    channelThumb: 'https://ui-avatars.com/api/?name=AstroTalk&background=3a0ca3&color=fff&size=400&font-size=0.35&bold=true',
     channelUrl: 'https://www.youtube.com/@astrotalk_app',
+    channelLogo: 'https://yt3.googleusercontent.com/jy80ZUUF5ZWNvHXp8Vww_v_lyHuehTSKpWT4DvItXX-RwI8NjLf73gjHw4Nbz2N_cm7slhBZ=s88-c-k-c0x00ffffff-no-rj',
     client: 'AstroTalk',
-  },
-  {
-    id: 'lf-5',
-    title: 'Caroline Winkler – Lifestyle Vlog',
-    category: 'Long Form',
-    youtubeId: '',
-    channelThumb: 'https://ui-avatars.com/api/?name=Caroline+Winkler&background=f4a261&color=fff&size=400&font-size=0.35&bold=true',
-    channelUrl: 'https://www.youtube.com/@CarolineWinkler_',
-    client: 'Caroline Winkler',
   },
 
   // ── 3D ANIMATION ─────────────────────────────────────────────────────────────
@@ -177,8 +167,8 @@ export const videoPortfolio: VideoPortfolioItem[] = [
     title: 'Woodlance – 3D Walkthrough',
     category: '3D Animation',
     youtubeId: '',
-    channelThumb: 'https://ui-avatars.com/api/?name=Woodlance&background=4a4e69&color=fff&size=400&font-size=0.35&bold=true',
     channelUrl: 'https://www.youtube.com/c/WoodlanceInteriors',
+    channelLogo: 'https://yt3.googleusercontent.com/ytc/AIdro_mm2btr2FttyBc44d0esk72kmBMGmsf7s7xT2QbUK_IkQ=s88-c-k-c0x00ffffff-no-rj',
     client: 'Woodlance Interiors',
   },
   {
@@ -186,8 +176,8 @@ export const videoPortfolio: VideoPortfolioItem[] = [
     title: 'Ali Interior – 3D Render',
     category: '3D Animation',
     youtubeId: '',
-    channelThumb: 'https://ui-avatars.com/api/?name=Ali+Interior&background=b5838d&color=fff&size=400&font-size=0.35&bold=true',
     channelUrl: 'https://www.youtube.com/@Aliinterior05531/videos',
+    channelLogo: 'https://yt3.googleusercontent.com/S40UWbU9gee0J6oIyZ19mEW-c8F1oRY7-bpOC4_NHc0rSU0A3Sd3cNSX61Ulmez_pPr--aPwzY0=s88-c-k-c0x00ffffff-no-rj',
     client: 'Ali Interior',
   },
 
@@ -197,7 +187,6 @@ export const videoPortfolio: VideoPortfolioItem[] = [
     title: 'Khooni Monday – Horror Film',
     category: 'Live Action',
     youtubeId: '',
-    channelThumb: 'https://ui-avatars.com/api/?name=Khooni+Monday&background=370617&color=fff&size=400&font-size=0.35&bold=true',
     channelUrl: 'https://www.youtube.com/@KhooniMondayfreak/',
     client: 'Khooni Monday',
   },

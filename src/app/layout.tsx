@@ -22,7 +22,7 @@ export const metadata: Metadata = {
   description:
     'We design, develop, and deliver impact-driven creative & digital experiences.',
   icons: {
-    icon: '/assets/images/GDMT-creations-logo.jpg',
+    icon: '/assets/images/logo2.svg',
   },
 };
 
@@ -36,7 +36,9 @@ export default function RootLayout({
       <body className={`${geistSans.variable} ${geistMono.variable} font-sans`}>
         <Toaster position='top-center' />
         <Navbar />
-        {children}
+        <main className='pt-16'>
+          {children}
+        </main>
         <Footer />
       </body>
     </html>

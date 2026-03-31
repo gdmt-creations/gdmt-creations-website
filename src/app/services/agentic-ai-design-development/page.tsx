@@ -38,7 +38,7 @@ const AgenticAiPage = () => {
       <div className='mt-16 grid gap-6 md:grid-cols-2 text-sm text-gray-800'>
         <div>
           <h3 className='text-lg font-semibold text-[var(--color-primary)] mb-2'>
-            Why Choose GDMT Creations?
+            Why Choose Saarva?
           </h3>
           <ul className='list-disc list-inside space-y-1'>
             {whyChoose.map((point) => (
@@ -66,7 +66,7 @@ const AgenticAiPage = () => {
       <div className='mt-12 flex justify-center gap-4 flex-wrap'>
         <button
           onClick={() => (window.location.href = ctaPrimary.link)}
-          className='bg-[var(--color-primary)] text-white px-6 py-3 rounded-md font-medium hover:bg-red-600 transition'
+          className='bg-[var(--color-primary)] text-white px-6 py-3 rounded-md font-medium hover:bg-[var(--color-primary-hover)] transition'
         >
           {ctaPrimary.label}
         </button>

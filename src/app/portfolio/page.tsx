@@ -15,6 +15,37 @@ import {
   ytThumb,
 } from '@/data/portfolioData';
 
+// ─── YouTube Icon SVG ──────────────────────────────────────────────────────────
+const YouTubeIcon = ({ className = 'w-5 h-5' }: { className?: string }) => (
+  <svg className={className} viewBox="0 0 24 24" fill="currentColor">
+    <path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z" />
+  </svg>
+);
+
+// ─── Extract channel handle from URL ──────────────────────────────────────────
+const getChannelHandle = (url: string) => {
+  const match = url.match(/@([^/]+)/);
+  return match ? `@${match[1]}` : '';
+};
+
+// ─── Color palette for cards without thumbnails ───────────────────────────────
+const cardGradients = [
+  'from-rose-600 to-pink-500',
+  'from-violet-600 to-purple-500',
+  'from-blue-600 to-cyan-500',
+  'from-emerald-600 to-teal-500',
+  'from-amber-600 to-orange-500',
+  'from-indigo-600 to-blue-500',
+  'from-fuchsia-600 to-pink-500',
+  'from-sky-600 to-blue-400',
+];
+
+const getGradient = (id: string) => {
+  let hash = 0;
+  for (let i = 0; i < id.length; i++) hash = id.charCodeAt(i) + ((hash << 5) - hash);
+  return cardGradients[Math.abs(hash) % cardGradients.length];
+};
+
 // ─── Video Card ────────────────────────────────────────────────────────────────
 const VideoCard = ({
   item,
@@ -25,11 +56,20 @@ const VideoCard = ({
 }) => {
   const hasId = !!item.youtubeId;
   const thumb = hasId ? ytThumb(item.youtubeId!) : null;
+  const channelHandle = getChannelHandle(item.channelUrl);
+
+  const handleClick = () => {
+    if (hasId) {
+      onPlay(item);
+    } else {
+      window.open(item.channelUrl, '_blank', 'noopener,noreferrer');
+    }
+  };
 
   return (
     <div
       className="relative flex-shrink-0 w-48 sm:w-56 md:w-64 aspect-video rounded-xl overflow-hidden cursor-pointer group shadow-md"
-      onClick={() => onPlay(item)}
+      onClick={handleClick}
     >
       {/* Thumbnail */}
       <div className="absolute inset-0 bg-gray-800">
@@ -41,28 +81,84 @@ const VideoCard = ({
             className="object-cover group-hover:scale-105 transition duration-300"
           />
         ) : (
-          <div className="w-full h-full flex flex-col items-center justify-center gap-2 text-gray-500">
-            <span className="text-4xl">🎬</span>
-            <span className="text-xs px-2 text-center leading-tight">{item.client}</span>
+          <div className={`w-full h-full bg-gradient-to-br ${getGradient(item.id)} flex flex-col items-center justify-center gap-2 p-3`}>
+            {item.channelLogo ? (
+              <div className="w-14 h-14 rounded-full overflow-hidden border-2 border-white/30 shadow-lg">
+                <Image
+                  src={item.channelLogo}
+                  alt={item.client || 'Channel'}
+                  width={56}
+                  height={56}
+                  className="object-cover"
+                />
+              </div>
+            ) : (
+              <div className="bg-white/20 backdrop-blur-sm rounded-full p-2">
+                <YouTubeIcon className="w-6 h-6 text-white" />
+              </div>
+            )}
+            <span className="text-white font-bold text-sm text-center leading-tight drop-shadow-sm">
+              {item.client}
+            </span>
+            {channelHandle && (
+              <span className="text-white/70 text-[10px] font-medium">{channelHandle}</span>
+            )}
           </div>
         )}
       </div>
 
-      {/* Play overlay */}
+      {/* Hover overlay */}
       <div className="absolute inset-0 bg-black/40 flex items-center justify-center opacity-0 group-hover:opacity-100 transition duration-300">
-        <div className="w-12 h-12 rounded-full bg-white/90 flex items-center justify-center shadow-lg">
-          <svg className="w-5 h-5 text-gray-900 ml-1" fill="currentColor" viewBox="0 0 24 24">
-            <path d="M8 5v14l11-7z" />
-          </svg>
-        </div>
+        {hasId ? (
+          <div className="w-12 h-12 rounded-full bg-white/90 flex items-center justify-center shadow-lg">
+            <svg className="w-5 h-5 text-gray-900 ml-1" fill="currentColor" viewBox="0 0 24 24">
+              <path d="M8 5v14l11-7z" />
+            </svg>
+          </div>
+        ) : (
+          <div className="flex flex-col items-center gap-1.5">
+            <div className="w-12 h-12 rounded-full bg-red-600 flex items-center justify-center shadow-lg">
+              <YouTubeIcon className="w-5 h-5 text-white" />
+            </div>
+            <span className="text-white text-[10px] font-semibold bg-black/50 px-2 py-0.5 rounded-full">
+              Visit Channel ↗
+            </span>
+          </div>
+        )}
       </div>
 
       {/* Title bar */}
-      <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/80 px-3 py-2">
-        <p className="text-white text-xs font-medium truncate">{item.title}</p>
-        {item.client && (
-          <p className="text-gray-300 text-[10px] truncate">{item.client}</p>
-        )}
+      <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/80 via-black/40 to-transparent px-3 py-2">
+        <div className="flex items-center gap-2">
+          {item.channelLogo && (
+            <div className="w-6 h-6 rounded-full overflow-hidden border border-white/30 flex-shrink-0">
+              <Image
+                src={item.channelLogo}
+                alt={item.client || 'Channel'}
+                width={24}
+                height={24}
+                className="object-cover"
+              />
+            </div>
+          )}
+          <div className="min-w-0">
+            <p className="text-white text-xs font-medium truncate">{item.title}</p>
+            <div className="flex items-center gap-1.5 mt-0.5">
+              {item.client && (
+                <p className="text-gray-300 text-[10px] truncate">{item.client}</p>
+              )}
+              {channelHandle && (
+                <>
+                  <span className="text-gray-500 text-[10px]">·</span>
+                  <span className="text-red-400 text-[10px] flex items-center gap-0.5">
+                    <YouTubeIcon className="w-2.5 h-2.5" />
+                    {channelHandle}
+                  </span>
+                </>
+              )}
+            </div>
+          </div>
+        </div>
       </div>
     </div>
   );
@@ -183,19 +279,45 @@ const VideoModal = ({
             />
           </div>
         ) : (
-          <div className="aspect-video flex items-center justify-center bg-black p-8 text-center">
-            <div className="space-y-4">
-              <div className="text-5xl">🎬</div>
-              <p className="text-gray-300 text-sm">
-                View this project on the client&apos;s channel:
+          <div className={`aspect-video flex items-center justify-center bg-gradient-to-br ${getGradient(item.id)} p-8 text-center relative overflow-hidden`}>
+            {/* Decorative circles */}
+            <div className="absolute -top-10 -right-10 w-40 h-40 rounded-full bg-white/5" />
+            <div className="absolute -bottom-10 -left-10 w-32 h-32 rounded-full bg-white/5" />
+            
+            <div className="space-y-5 relative z-10">
+              {item.channelLogo ? (
+                <div className="mx-auto w-20 h-20 rounded-full overflow-hidden border-3 border-white/30 shadow-xl">
+                  <Image
+                    src={item.channelLogo}
+                    alt={item.client || 'Channel'}
+                    width={80}
+                    height={80}
+                    className="object-cover"
+                  />
+                </div>
+              ) : (
+                <div className="mx-auto w-16 h-16 rounded-full bg-white/15 backdrop-blur-sm flex items-center justify-center">
+                  <YouTubeIcon className="w-8 h-8 text-white" />
+                </div>
+              )}
+              <div>
+                <p className="text-white font-bold text-lg">{item.client}</p>
+                {getChannelHandle(item.channelUrl) && (
+                  <p className="text-white/60 text-sm mt-0.5">{getChannelHandle(item.channelUrl)}</p>
+                )}
+              </div>
+              <p className="text-white/80 text-sm max-w-xs mx-auto">
+                Watch our work for <strong>{item.client}</strong> on their YouTube channel
               </p>
               <a
                 href={item.channelUrl}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-block bg-[var(--color-primary)] text-white px-6 py-2.5 rounded-lg text-sm font-medium hover:brightness-110 transition"
+                className="inline-flex items-center gap-2 bg-white text-gray-900 px-6 py-2.5 rounded-full text-sm font-semibold hover:bg-gray-100 transition shadow-lg"
               >
-                Watch on YouTube ↗
+                <YouTubeIcon className="w-4 h-4 text-red-600" />
+                Watch on YouTube
+                <span className="text-xs">↗</span>
               </a>
             </div>
           </div>
@@ -316,6 +438,7 @@ export default function PortfolioPage() {
                       src={t.photo}
                       alt={t.name}
                       fill
+                      unoptimized
                       className="rounded-full object-cover border-2 border-[var(--color-primary)]"
                       onError={(e) => {
                         (e.currentTarget as HTMLImageElement).src =

@@ -58,13 +58,12 @@ const Footer = () => {
         <div className='space-y-4'>
           <div className='flex items-center gap-3'>
             <Image
-              src='/assets/images/GDMT-creations-logo.jpg'
+              src='/assets/images/logo.svg'
               alt='Saarva Logo'
-              width={44}
-              height={44}
-              className='rounded-md'
+              width={120}
+              height={40}
+              priority
             />
-            <span className='text-xl font-bold text-[var(--color-primary)]'>Saarva</span>
           </div>
           <p className='text-sm text-gray-400 leading-relaxed'>
             Saarva IT &amp; Digital Services LLP — a full-spectrum creative

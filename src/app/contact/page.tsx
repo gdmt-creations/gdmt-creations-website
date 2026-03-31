@@ -206,7 +206,7 @@ const ContactPage = () => {
           <button
             type='submit'
             disabled={isSubmitting}
-            className='bg-[var(--color-primary)] text-white px-6 py-3 rounded-md font-medium hover:bg-red-600 transition disabled:opacity-50 disabled:cursor-not-allowed'
+            className='bg-[var(--color-primary)] text-white px-6 py-3 rounded-md font-medium hover:bg-[var(--color-primary-hover)] transition disabled:opacity-50 disabled:cursor-not-allowed'
           >
             {isSubmitting ? 'Sending...' : 'Submit'}
           </button>

@@ -41,5 +41,5 @@ export const appDevelopmentData = {
     'Post-Launch Support – Monitor, update, and evolve with your users’ needs',
   ],
   testimonial:
-    '“GDMT Creations delivered a beautiful and functional app that our users love. Their team was responsive, strategic, and delivered every feature we needed—on time and within budget.”',
+    '"Saarva delivered a beautiful and functional app that our users love. Their team was responsive, strategic, and delivered every feature we needed—on time and within budget."',
 };

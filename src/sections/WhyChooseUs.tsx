@@ -8,7 +8,7 @@ const WhyChooseUs = () => {
     <section className='py-16 px-6 bg-[var(--color-background)] text-[var(--color-foreground)]'>
       <div className='max-w-6xl mx-auto'>
         <SectionTitle
-          title='Why Choose GDMT Creations?'
+          title='Why Choose Saarva?'
           subtitle='Strategic thinking meets creative execution.'
         />
 

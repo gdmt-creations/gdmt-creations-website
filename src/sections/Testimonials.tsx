@@ -28,6 +28,7 @@ const Testimonials = () => {
                   src={t.photo}
                   alt={t.name}
                   fill
+                  unoptimized
                   className='rounded-full object-cover border-2 border-[var(--color-primary)]'
                   onError={(e) => {
                     (e.currentTarget as HTMLImageElement).src =

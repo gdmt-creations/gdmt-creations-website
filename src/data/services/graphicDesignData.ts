@@ -1,7 +1,7 @@
 export const graphicDesignData = {
   title: 'Graphic Designing',
   intro:
-    'Transforming Ideas into Stunning Visuals. At GDMT Creations, we understand that design isn’t just about aesthetics—it’s about communication. Our graphic design services are crafted to translate your brand’s identity into impactful visuals that connect with your audience across platforms.',
+    `Transforming Ideas into Stunning Visuals. At Saarva, we understand that design isn't just about aesthetics—it's about communication. Our graphic design services are crafted to translate your brand's identity into impactful visuals that connect with your audience across platforms.`,
   highlights: [
     {
       title: 'Branding & Logo Design',
@@ -38,7 +38,7 @@ export const graphicDesignData = {
     'Final Delivery – Source files in all necessary formats',
   ],
   testimonial:
-    '“The design team at GDMT Creations brought our brand to life with clean, modern visuals that stood out across all our platforms. Their attention to detail and understanding of brand aesthetics is unmatched.”',
+    '"The design team at Saarva brought our brand to life with clean, modern visuals that stood out across all our platforms. Their attention to detail and understanding of brand aesthetics is unmatched."',
   ctas: [
     { label: 'Get a Free Design Consultation', link: '/contact' },
     { label: 'Request a Quote', link: '/contact' },

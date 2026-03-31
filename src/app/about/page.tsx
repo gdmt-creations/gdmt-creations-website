@@ -1,5 +1,6 @@
 'use client';
 
+import Image from 'next/image';
 import { aboutData } from '@/data/aboutData';
 
 const AboutPage = () => {
@@ -22,13 +23,12 @@ const AboutPage = () => {
           <div className='flex flex-col md:flex-row gap-0'>
             {/* Founder Photo */}
             <div className='md:w-2/5 relative min-h-[280px] bg-[var(--color-primary)]/10 flex items-center justify-center'>
-              {/* Placeholder shown until real founder photo is added */}
-              <div className='relative z-10 flex flex-col items-center justify-center text-[var(--color-primary)] p-8'>
-                <div className='w-24 h-24 rounded-full bg-[var(--color-primary)]/20 flex items-center justify-center text-5xl mb-3'>
-                  👤
-                </div>
-                <span className='text-sm font-medium text-gray-500'>Founder Photo</span>
-              </div>
+              <Image
+                src='/assets/images/founderImage.jpeg'
+                alt='Gaurav Dutt Misra — Founder, Saarva'
+                fill
+                className='object-fill'
+              />
             </div>
 
             {/* Founder Note Text */}
@@ -36,9 +36,17 @@ const AboutPage = () => {
               <h2 className='text-2xl font-bold mb-4 text-[var(--color-primary)]'>
                 Founder&apos;s Note
               </h2>
-              <p className='text-gray-700 leading-relaxed'>
-                {aboutData.foundersNote}
-              </p>
+              <div className='text-gray-700 leading-relaxed space-y-4'>
+                {aboutData.foundersNote.split('\n\n').map((para, i) => (
+                  <p key={i}>{para}</p>
+                ))}
+              </div>
+              {aboutData.founderSignature && (
+                <div className='mt-6 pt-4 border-t border-gray-200'>
+                  <p className='text-gray-900 font-semibold'>— {aboutData.founderSignature.name}</p>
+                  <p className='text-gray-500 text-sm'>{aboutData.founderSignature.title}</p>
+                </div>
+              )}
             </div>
           </div>
         </section>

@@ -17,7 +17,7 @@ export async function POST(req: NextRequest) {
   });
 
   const mailOptions = {
-    from: `"GDMT Website Contact" <${process.env.EMAIL_USER}>`,
+    from: `"Saarva Website Contact" <${process.env.EMAIL_USER}>`,
     to: process.env.EMAIL_USER,
     subject: `New Contact Submission from ${name}`,
     html: `

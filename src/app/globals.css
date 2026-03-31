@@ -1,11 +1,12 @@
 @import 'tailwindcss';
+@plugin '@tailwindcss/typography';
 
 :root {
-  --color-primary: #f24e42; /* GDMT Red */
-  --color-primary-light: #ffebee;
+  --color-primary: #F16541; /* Saarva Orange */
+  --color-primary-light: #fff3ee;
   --color-background: #ffffff; /* Pure White */
   --color-foreground: #1f1f1f;
-  --color-primary-hover: #d43f36; /* optional darker hover shade */
+  --color-primary-hover: #d9552e; /* darker hover shade */
   --font-sans: var(--font-geist-sans);
   --font-mono: var(--font-geist-mono);
   --background: #ffffff;
@@ -17,13 +18,6 @@
   --color-foreground: var(--foreground);
   --font-sans: var(--font-geist-sans);
   --font-mono: var(--font-geist-mono);
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
 }
 
 body {

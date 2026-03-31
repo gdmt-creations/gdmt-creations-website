@@ -41,7 +41,7 @@ const DetailPageWrapper = ({
         <div className='max-w-6xl mx-auto'>
           <button
             onClick={() => router.push(backHref)}
-            className='w-full bg-[var(--color-primary)] text-white  py-3 text-sm font-semibold flex items-center justify-center gap-2 rounded-md hover:bg-red-600 transition-all'
+            className='w-full bg-[var(--color-primary)] text-white  py-3 text-sm font-semibold flex items-center justify-center gap-2 rounded-md hover:bg-[var(--color-primary-hover)] transition-all'
           >
             <ArrowLeftCircleIcon className='w-4 h-4' />
             Explore Other Services

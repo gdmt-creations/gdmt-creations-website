@@ -39,7 +39,7 @@ export const videoEditingData = {
     'Delivery – Multi-format Export',
   ],
   testimonial:
-    '“We trusted GDMT Creations with a critical campaign launch video—and they delivered brilliance. The edits were sharp, the pacing perfect, and the transitions elevated the entire story.”',
+    '"We trusted Saarva with a critical campaign launch video—and they delivered brilliance. The edits were sharp, the pacing perfect, and the transitions elevated the entire story."',
   cta: {
     primary: { label: 'Start Your Video Project', link: '/contact' },
     secondary: { label: 'Request a Custom Quote', link: '/contact' },

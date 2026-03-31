@@ -1,7 +1,7 @@
 const websiteDevelopmentData = {
   title: 'Website Design & Development',
   intro:
-    'Your website is more than just a URL—it’s the foundation of your digital identity. At GDMT Creations, we build visually engaging, technically sound, and conversion-focused websites that represent your brand and drive real results.',
+    `Your website is more than just a URL—it's the foundation of your digital identity. At Saarva, we build visually engaging, technically sound, and conversion-focused websites that represent your brand and drive real results.`,
   offerings: [
     {
       title: 'Custom Website Design',
@@ -39,7 +39,7 @@ const websiteDevelopmentData = {
     'Post-Launch Support – Updates, security, and performance monitoring',
   ],
   testimonial:
-    '“Our new website is sleek, user-friendly, and perfectly optimized. GDMT Creations made the entire process seamless—from UI/UX design to deployment. We’ve already seen increased traffic and engagement.”',
+    `"Our new website is sleek, user-friendly, and perfectly optimized. Saarva made the entire process seamless—from UI/UX design to deployment. We've already seen increased traffic and engagement."`,
   ctaPrimary: {
     label: 'Schedule a Free Consultation',
     link: '/contact',
