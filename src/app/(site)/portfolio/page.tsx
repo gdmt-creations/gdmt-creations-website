@@ -447,9 +447,9 @@ const PortfolioTestimonials = () => {
   );
 
   return (
-    <section className="bg-gray-50 py-12 sm:py-16 px-4 sm:px-6 border-t border-gray-200">
+    <section className="bg-gray-50 py-8 sm:py-16 px-4 sm:px-6 border-t border-gray-200">
       <div className="max-w-5xl mx-auto">
-        <h2 className="text-xl sm:text-2xl font-bold text-center mb-6 sm:mb-10 text-[var(--color-primary)]">
+        <h2 className="text-lg sm:text-2xl font-bold text-center mb-4 sm:mb-10 text-[var(--color-primary)]">
           What Our Clients Say
         </h2>
 
@@ -519,9 +519,9 @@ export default function PortfolioPage() {
     <main className="min-h-screen bg-[var(--color-background)] text-[var(--color-foreground)]">
 
       {/* ── Hero Banner ── */}
-      <section className="bg-gradient-to-br from-[var(--color-primary)] to-[#1a1a2e] text-white py-14 sm:py-20 px-4 sm:px-6 text-center">
-        <h1 className="text-3xl sm:text-4xl md:text-5xl font-black mb-3 sm:mb-4 tracking-tight">Our Portfolio</h1>
-        <p className="text-gray-200 max-w-xl mx-auto text-base sm:text-lg">
+      <section className="bg-gradient-to-br from-[var(--color-primary)] to-[#1a1a2e] text-white py-8 sm:py-20 px-4 sm:px-6 text-center">
+        <h1 className="text-2xl sm:text-4xl md:text-5xl font-black mb-2 sm:mb-4 tracking-tight">Our Portfolio</h1>
+        <p className="text-gray-200 max-w-xl mx-auto text-xs sm:text-lg">
           A curated showcase of creative work across video, design, web, and more.
         </p>
       </section>
@@ -549,24 +549,24 @@ export default function PortfolioPage() {
 
       {/* ── VIDEO PRODUCTION Section ── */}
       {(activeFilter === 'All' || activeFilter === 'Video Editing') && (
-        <section className="max-w-7xl mx-auto px-4 sm:px-6 py-10 sm:py-14">
-          <div className="text-center mb-8 sm:mb-10">
-            <h2 className="text-2xl sm:text-3xl font-black uppercase tracking-tight text-[var(--color-primary)]">
+        <section className="max-w-7xl mx-auto px-4 sm:px-6 py-6 sm:py-14">
+          <div className="text-center mb-5 sm:mb-10">
+            <h2 className="text-lg sm:text-3xl font-black uppercase tracking-tight text-[var(--color-primary)]">
               Video Production
             </h2>
-            <p className="text-gray-500 mt-2 text-sm">
+            <p className="text-gray-500 mt-1 sm:mt-2 text-xs sm:text-sm">
               Scroll-stopping content across all formats — short form, long form, animation &amp; more.
             </p>
           </div>
 
-          <div className="space-y-10 sm:space-y-14">
+          <div className="space-y-6 sm:space-y-14">
             {videoCategories.map((cat) => {
               const items = itemsForCategory(cat);
               if (items.length === 0) return null;
               return (
                 <div key={cat}>
-                  <h3 className="text-lg font-bold mb-5 text-gray-800 flex items-center gap-3">
-                    <span className="w-1 h-6 bg-[var(--color-primary)] rounded-full inline-block" />
+                  <h3 className="text-sm sm:text-lg font-bold mb-3 sm:mb-5 text-gray-800 flex items-center gap-2 sm:gap-3">
+                    <span className="w-1 h-5 sm:h-6 bg-[var(--color-primary)] rounded-full inline-block" />
                     {cat}
                     <span className="text-xs font-normal text-gray-400 ml-1">
                       ({items.length} project{items.length > 1 ? 's' : ''})
@@ -595,12 +595,12 @@ export default function PortfolioPage() {
 
       {/* ── Coming Soon for other filters ── */}
       {activeFilter !== 'All' && activeFilter !== 'Video Editing' && (
-        <section className="max-w-7xl mx-auto px-4 sm:px-6 py-16 sm:py-24 text-center">
-          <div className="text-5xl sm:text-6xl mb-4 sm:mb-5">🚧</div>
-          <h2 className="text-xl sm:text-2xl font-bold text-gray-700 mb-3">
+        <section className="max-w-7xl mx-auto px-4 sm:px-6 py-12 sm:py-24 text-center">
+          <div className="text-4xl sm:text-6xl mb-3 sm:mb-5">🚧</div>
+          <h2 className="text-lg sm:text-2xl font-bold text-gray-700 mb-2 sm:mb-3">
             {activeFilter} Portfolio
           </h2>
-          <p className="text-gray-500 max-w-sm mx-auto">
+          <p className="text-gray-500 max-w-sm mx-auto text-xs sm:text-base">
             Projects for this category are being uploaded. Check back soon!
           </p>
         </section>

@@ -79,21 +79,21 @@ const ServicesSection = () => {
   };
 
   return (
-    <section className='relative py-16 sm:py-24 px-4 sm:px-6 bg-gradient-to-b from-gray-50/80 to-white overflow-hidden'>
+    <section className='relative py-8 sm:py-24 px-4 sm:px-6 bg-gradient-to-b from-gray-50/80 to-white overflow-hidden'>
       {/* Subtle background decoration */}
       <div className='absolute top-0 left-1/2 -translate-x-1/2 w-[600px] h-[600px] rounded-full bg-[var(--color-primary)] opacity-[0.02] blur-[100px] pointer-events-none' />
 
       <div className='max-w-6xl mx-auto relative'>
         {/* Section header */}
-        <div className='text-center mb-8 sm:mb-16'>
-          <div className='inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-[var(--color-primary)]/10 text-[var(--color-primary)] text-xs font-semibold tracking-wide uppercase mb-3 sm:mb-4'>
+        <div className='text-center mb-5 sm:mb-16'>
+          <div className='inline-flex items-center gap-1.5 sm:gap-2 px-3 py-1 sm:px-4 sm:py-1.5 rounded-full bg-[var(--color-primary)]/10 text-[var(--color-primary)] text-[10px] sm:text-xs font-semibold tracking-wide uppercase mb-2 sm:mb-4'>
             <span className='w-1.5 h-1.5 rounded-full bg-[var(--color-primary)] animate-pulse' />
             Our Services
           </div>
-          <h2 className='text-3xl sm:text-4xl md:text-5xl font-bold text-gray-900 mb-3 sm:mb-4'>
+          <h2 className='text-xl sm:text-4xl md:text-5xl font-bold text-gray-900 mb-2 sm:mb-4'>
             What We <span className='text-[var(--color-primary)]'>Do</span>
           </h2>
-          <p className='text-gray-500 max-w-xl mx-auto text-sm sm:text-base px-2'>
+          <p className='text-gray-500 max-w-xl mx-auto text-xs sm:text-base px-2'>
             From stunning visuals to powerful technology — we craft end-to-end digital solutions that help your brand grow.
           </p>
         </div>
@@ -156,10 +156,10 @@ const ServicesSection = () => {
         </div>
 
         {/* Bottom CTA */}
-        <div className='text-center mt-10 sm:mt-14'>
+        <div className='text-center mt-6 sm:mt-14'>
           <Link
             href='/services'
-            className='inline-flex items-center gap-2 px-6 sm:px-8 py-3 sm:py-3.5 rounded-full bg-[var(--color-primary)] text-white font-semibold text-sm active:scale-95 hover:bg-[var(--color-primary-hover)] transition-all duration-300 hover:shadow-lg hover:shadow-[var(--color-primary)]/25 hover:-translate-y-0.5'
+            className='inline-flex items-center gap-2 px-5 sm:px-8 py-2.5 sm:py-3.5 rounded-full bg-[var(--color-primary)] text-white font-semibold text-xs sm:text-sm active:scale-95 hover:bg-[var(--color-primary-hover)] transition-all duration-300 hover:shadow-lg hover:shadow-[var(--color-primary)]/25 hover:-translate-y-0.5'
           >
             View All Services
             <ArrowRight className='w-4 h-4' />

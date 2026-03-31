@@ -51,7 +51,7 @@ const SocialIcon = ({ icon }: { icon: string }) => {
 
 const Footer = () => {
   return (
-    <footer className='bg-[#0d0d0d] text-white px-4 sm:px-6 py-10 sm:py-14'>
+    <footer className='hidden md:block bg-[#0d0d0d] text-white px-4 sm:px-6 py-10 sm:py-14'>
       <div className='max-w-7xl mx-auto grid grid-cols-2 sm:grid-cols-2 lg:grid-cols-4 gap-8 sm:gap-10'>
 
         {/* Column 1: Brand */}

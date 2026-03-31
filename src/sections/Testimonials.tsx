@@ -6,15 +6,15 @@ import { useRef, useState, useEffect } from 'react';
 import { ChevronLeft, ChevronRight } from 'lucide-react';
 
 const TestimonialCard = ({ t }: { t: typeof testimonials[number] }) => (
-  <div className='bg-white p-5 sm:p-6 rounded-2xl shadow-md border border-gray-100 flex flex-col gap-3 sm:gap-4 h-full'>
+  <div className='bg-white p-4 sm:p-6 rounded-xl sm:rounded-2xl shadow-sm sm:shadow-md border border-gray-100 flex flex-col gap-2.5 sm:gap-4 h-full'>
     {/* Quote text */}
-    <p className='text-gray-600 italic leading-relaxed text-sm sm:text-base flex-grow'>
+    <p className='text-gray-600 italic leading-relaxed text-xs sm:text-base flex-grow'>
       &ldquo;{t.quote}&rdquo;
     </p>
 
     {/* Client info */}
-    <div className='flex items-center gap-3 sm:gap-4 mt-1 sm:mt-2'>
-      <div className='relative w-10 h-10 sm:w-14 sm:h-14 flex-shrink-0'>
+    <div className='flex items-center gap-2.5 sm:gap-4 mt-0.5 sm:mt-2'>
+      <div className='relative w-9 h-9 sm:w-14 sm:h-14 flex-shrink-0'>
         <Image
           src={t.photo}
           alt={t.name}
@@ -66,8 +66,8 @@ const Testimonials = () => {
   };
 
   return (
-    <section className='py-12 sm:py-16 px-4 sm:px-6 bg-[var(--color-background)] text-[var(--color-foreground)]'>
-      <h2 className='text-2xl sm:text-3xl font-bold text-center mb-6 sm:mb-10 text-[var(--color-primary)]'>
+    <section className='py-8 sm:py-16 px-4 sm:px-6 bg-[var(--color-background)] text-[var(--color-foreground)]'>
+      <h2 className='text-xl sm:text-3xl font-bold text-center mb-4 sm:mb-10 text-[var(--color-primary)]'>
         What Our Clients Say
       </h2>
 

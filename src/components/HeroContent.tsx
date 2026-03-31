@@ -8,16 +8,16 @@ const HeroContent = ({ isVisible }: Props) => {
       className={`absolute z-10 transition-all duration-700 ease-in-out ${
         isVisible
           ? // Video IS playing - compact, bottom-left
-            'bottom-4 left-4 sm:bottom-10 sm:left-10 w-[85%] sm:max-w-sm backdrop-blur-md bg-white/5 border border-white/20 rounded-2xl p-4 sm:p-5 text-left scale-90 origin-bottom-left'
+            'bottom-3 left-3 sm:bottom-10 sm:left-10 w-[80%] sm:max-w-sm backdrop-blur-md bg-white/5 border border-white/20 rounded-xl sm:rounded-2xl p-3 sm:p-5 text-left scale-90 origin-bottom-left'
           : // Video NOT playing - large, centered
             'top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[92%] sm:max-w-2xl text-center scale-100'
       }`}
     >
       <h1
-        className={`font-bold mb-2 sm:mb-4 transition-all duration-700 ${
+        className={`font-bold mb-1.5 sm:mb-4 transition-all duration-700 ${
           isVisible
-            ? 'text-lg sm:text-2xl md:text-3xl'
-            : 'text-2xl sm:text-4xl md:text-6xl'
+            ? 'text-base sm:text-2xl md:text-3xl'
+            : 'text-xl sm:text-4xl md:text-6xl'
         }`}
       >
         Welcome to{' '}

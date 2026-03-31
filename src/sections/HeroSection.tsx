@@ -27,7 +27,7 @@ const HeroSection = () => {
   return (
     <section
       ref={sectionRef}
-      className='relative min-h-[90vh] w-full overflow-hidden bg-black text-white'
+      className='relative min-h-[75vh] sm:min-h-[90vh] w-full overflow-hidden bg-black text-white'
     >
       <HeroVideoBackground isVisible={isVisible} />
       <HeroContent isVisible={isVisible} />
