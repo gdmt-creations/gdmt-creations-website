@@ -44,6 +44,11 @@ body {
     padding-bottom: env(safe-area-inset-bottom, 0px);
   }
 }
+@supports (padding: env(safe-area-inset-top)) {
+  .pt-safe {
+    padding-top: env(safe-area-inset-top, 0px);
+  }
+}
 
 /* Smoother scrolling for touch */
 * {
@@ -60,6 +65,26 @@ body {
 }
 
 /* ── PWA App Feel ── */
+
+/* In standalone PWA mode, offset navbar + main content for safe-area-inset-top */
+@media all and (display-mode: standalone) {
+  .navbar-fixed {
+    padding-top: env(safe-area-inset-top, 0px);
+  }
+  .main-content {
+    padding-top: calc(env(safe-area-inset-top, 0px) + var(--navbar-h)) !important;
+  }
+}
+
+/* Navbar height variable */
+:root {
+  --navbar-h: 3.5rem; /* h-14 on mobile */
+}
+@media (min-width: 768px) {
+  :root {
+    --navbar-h: 4rem; /* h-16 on desktop */
+  }
+}
 
 /* Standalone mode: hide address bar chrome */
 @media all and (display-mode: standalone) {

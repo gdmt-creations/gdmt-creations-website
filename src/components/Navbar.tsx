@@ -39,8 +39,10 @@ const Navbar = () => {
 
   return (
     <>
-      <header className='bg-white/95 backdrop-blur-md fixed top-0 left-0 right-0 z-50 h-14 md:h-16 border-b border-gray-100'>
-        <div className='max-w-7xl mx-auto px-4 sm:px-6 h-full flex justify-between items-center'>
+      <header
+        className='bg-white/95 backdrop-blur-md fixed top-0 left-0 right-0 z-50 border-b border-gray-100 navbar-fixed'
+      >
+        <div className='max-w-7xl mx-auto px-4 sm:px-6 h-14 md:h-16 flex justify-between items-center'>
           {/* Logo */}
           <Link href='/' className='flex items-center'>
             <Image

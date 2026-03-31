@@ -10,8 +10,7 @@ export default function SiteLayout({
   return (
     <div className='overflow-x-clip'>
       <Navbar />
-      {/* pt-14 for mobile (shorter navbar), md:pt-16 for desktop */}
-      <main className='pt-14 md:pt-16 pb-[72px] md:pb-0'>{children}</main>
+      <main className='main-content pt-14 md:pt-16 pb-[72px] md:pb-0'>{children}</main>
       <Footer />
       <BottomTabBar />
     </div>
