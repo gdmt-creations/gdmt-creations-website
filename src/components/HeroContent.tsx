@@ -8,16 +8,16 @@ const HeroContent = ({ isVisible }: Props) => {
       className={`absolute z-10 transition-all duration-700 ease-in-out ${
         isVisible
           ? // Video IS playing - compact, bottom-left
-            'bottom-6 left-4 sm:bottom-10 sm:left-10 w-[80%] sm:max-w-sm backdrop-blur-md bg-white/5 border border-white/20 rounded-xl p-3 sm:p-5 text-left scale-90 origin-bottom-left'
+            'bottom-4 left-4 sm:bottom-10 sm:left-10 w-[85%] sm:max-w-sm backdrop-blur-md bg-white/5 border border-white/20 rounded-2xl p-4 sm:p-5 text-left scale-90 origin-bottom-left'
           : // Video NOT playing - large, centered
-            'top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[90%] sm:max-w-2xl text-center scale-100'
+            'top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[92%] sm:max-w-2xl text-center scale-100'
       }`}
     >
       <h1
-        className={`font-bold mb-3 sm:mb-4 transition-all duration-700 ${
+        className={`font-bold mb-2 sm:mb-4 transition-all duration-700 ${
           isVisible
-            ? 'text-xl sm:text-2xl md:text-3xl'
-            : 'text-3xl sm:text-4xl md:text-6xl'
+            ? 'text-lg sm:text-2xl md:text-3xl'
+            : 'text-2xl sm:text-4xl md:text-6xl'
         }`}
       >
         Welcome to{' '}
@@ -25,15 +25,15 @@ const HeroContent = ({ isVisible }: Props) => {
       </h1>
 
       <p
-        className={`mb-3 sm:mb-4 text-gray-200 transition-all duration-700 ${
-          isVisible ? 'text-sm sm:text-base' : 'text-lg sm:text-xl md:text-2xl'
+        className={`mb-2 sm:mb-4 text-gray-200 transition-all duration-700 ${
+          isVisible ? 'text-xs sm:text-base' : 'text-base sm:text-xl md:text-2xl'
         }`}
       >
         Digital Ideas. Designed to Deliver.
       </p>
 
       {!isVisible && (
-        <p className='text-base sm:text-lg text-gray-300 mb-6 sm:mb-8'>
+        <p className='text-sm sm:text-lg text-gray-300 mb-5 sm:mb-8 leading-relaxed'>
           We are a full-spectrum creative agency empowering businesses to grow,
           connect, and thrive in the digital world. Whether you&apos;re building
           a brand or scaling a business, our team transforms ideas into
@@ -43,10 +43,10 @@ const HeroContent = ({ isVisible }: Props) => {
 
       <a
         href='/contact'
-        className={`inline-block bg-[var(--color-primary)] text-white rounded-lg font-medium hover:brightness-110 transition ${
+        className={`inline-block bg-[var(--color-primary)] text-white rounded-xl font-semibold hover:brightness-110 active:scale-95 transition-all ${
           isVisible
-            ? 'px-4 py-2 text-sm'
-            : 'px-5 sm:px-6 py-2.5 sm:py-3 text-base sm:text-lg'
+            ? 'px-4 py-2 text-xs sm:text-sm'
+            : 'px-5 sm:px-6 py-2.5 sm:py-3 text-sm sm:text-lg'
         }`}
       >
         Let&apos;s Collaborate

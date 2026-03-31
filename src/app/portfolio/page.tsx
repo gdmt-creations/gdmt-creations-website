@@ -50,9 +50,11 @@ const getGradient = (id: string) => {
 const VideoCard = ({
   item,
   onPlay,
+  className = '',
 }: {
   item: VideoPortfolioItem;
   onPlay: (item: VideoPortfolioItem) => void;
+  className?: string;
 }) => {
   const hasId = !!item.youtubeId;
   const thumb = hasId ? ytThumb(item.youtubeId!) : null;
@@ -68,7 +70,7 @@ const VideoCard = ({
 
   return (
     <div
-      className="relative flex-shrink-0 w-48 sm:w-56 md:w-64 aspect-video rounded-xl overflow-hidden cursor-pointer group shadow-md"
+      className={`relative flex-shrink-0 aspect-video rounded-xl overflow-hidden cursor-pointer group shadow-md ${className || 'w-40 sm:w-48 md:w-56 lg:w-64'}`}
       onClick={handleClick}
     >
       {/* Thumbnail */}
@@ -164,6 +166,68 @@ const VideoCard = ({
   );
 };
 
+// ─── Mobile Logo Item ──────────────────────────────────────────────────────────
+const MobileLogoItem = ({
+  item,
+  onPlay,
+}: {
+  item: VideoPortfolioItem;
+  onPlay: (item: VideoPortfolioItem) => void;
+}) => {
+  const hasId = !!item.youtubeId;
+  const channelHandle = getChannelHandle(item.channelUrl);
+
+  const handleClick = () => {
+    if (hasId) {
+      onPlay(item);
+    } else {
+      window.open(item.channelUrl, '_blank', 'noopener,noreferrer');
+    }
+  };
+
+  return (
+    <button
+      onClick={handleClick}
+      className="flex flex-col items-center gap-2 p-2 rounded-2xl active:scale-95 transition-transform"
+    >
+      <div className={`w-16 h-16 rounded-full overflow-hidden shadow-md border-2 border-gray-100 ${!item.channelLogo ? `bg-gradient-to-br ${getGradient(item.id)} flex items-center justify-center` : ''}`}>
+        {item.channelLogo ? (
+          <Image
+            src={item.channelLogo}
+            alt={item.client || item.title}
+            width={64}
+            height={64}
+            className="object-cover w-full h-full"
+          />
+        ) : (
+          <YouTubeIcon className="w-6 h-6 text-white" />
+        )}
+      </div>
+      <span className="text-[11px] font-medium text-gray-700 text-center leading-tight line-clamp-2 max-w-[72px]">
+        {item.client || item.title}
+      </span>
+      {channelHandle && (
+        <span className="text-[9px] text-gray-400 -mt-1">{channelHandle}</span>
+      )}
+    </button>
+  );
+};
+
+// ─── Mobile Logo Grid ──────────────────────────────────────────────────────────
+const MobileLogoGrid = ({
+  items,
+  onPlay,
+}: {
+  items: VideoPortfolioItem[];
+  onPlay: (item: VideoPortfolioItem) => void;
+}) => (
+  <div className="grid grid-cols-4 gap-2 sm:hidden">
+    {items.map((item) => (
+      <MobileLogoItem key={item.id} item={item} onPlay={onPlay} />
+    ))}
+  </div>
+);
+
 // ─── Horizontal Scroll Row (Short Form) ────────────────────────────────────────
 const HorizontalRow = ({
   items,
@@ -189,8 +253,7 @@ const HorizontalRow = ({
 
       <div
         ref={scrollRef}
-        className="flex gap-4 overflow-x-auto pb-3 snap-x snap-mandatory px-1"
-        style={{ scrollbarWidth: 'none', msOverflowStyle: 'none' }}
+        className="flex gap-3 sm:gap-4 overflow-x-auto pb-3 snap-x snap-mandatory px-1 scrollbar-hide"
       >
         {items.map((item) => (
           <div key={item.id} className="snap-start">
@@ -218,9 +281,9 @@ const GridRow = ({
   items: VideoPortfolioItem[];
   onPlay: (item: VideoPortfolioItem) => void;
 }) => (
-  <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-4">
+  <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-3 sm:gap-4">
     {items.map((item) => (
-      <VideoCard key={item.id} item={item} onPlay={onPlay} />
+      <VideoCard key={item.id} item={item} onPlay={onPlay} className="w-full" />
     ))}
   </div>
 );
@@ -245,11 +308,11 @@ const VideoModal = ({
 
   return (
     <div
-      className="fixed inset-0 bg-black/85 z-50 flex items-center justify-center p-4"
+      className="fixed inset-0 bg-black/85 z-50 flex items-end sm:items-center justify-center p-0 sm:p-4"
       onClick={onClose}
     >
       <div
-        className="bg-gray-900 rounded-2xl overflow-hidden w-full max-w-3xl shadow-2xl"
+        className="bg-gray-900 rounded-t-2xl sm:rounded-2xl overflow-hidden w-full sm:max-w-3xl shadow-2xl max-h-[90vh]"
         onClick={(e) => e.stopPropagation()}
       >
         {/* Header */}
@@ -327,6 +390,123 @@ const VideoModal = ({
   );
 };
 
+// ─── Portfolio Testimonials (carousel on mobile, grid on desktop) ────────────
+const PortfolioTestimonials = () => {
+  const scrollRef = useRef<HTMLDivElement>(null);
+  const [activeIdx, setActiveIdx] = useState(0);
+  const total = portfolioTestimonials.length;
+
+  const updateIdx = () => {
+    if (!scrollRef.current) return;
+    const el = scrollRef.current;
+    const cardW = el.scrollWidth / total;
+    setActiveIdx(Math.min(Math.round(el.scrollLeft / cardW), total - 1));
+  };
+
+  useEffect(() => {
+    const el = scrollRef.current;
+    if (!el) return;
+    el.addEventListener('scroll', updateIdx, { passive: true });
+    return () => el.removeEventListener('scroll', updateIdx);
+  });
+
+  const scroll = (dir: 'left' | 'right') => {
+    if (!scrollRef.current) return;
+    const cardW = scrollRef.current.scrollWidth / total;
+    scrollRef.current.scrollBy({ left: dir === 'left' ? -cardW : cardW, behavior: 'smooth' });
+  };
+
+  const Card = ({ t }: { t: typeof portfolioTestimonials[number] }) => (
+    <div className="bg-white p-5 sm:p-6 rounded-2xl shadow-sm border border-gray-100 flex flex-col gap-3 sm:gap-4 h-full">
+      <p className="text-gray-600 italic leading-relaxed text-xs sm:text-sm flex-grow">
+        &ldquo;{t.quote}&rdquo;
+      </p>
+      <div className="flex items-center gap-3 mt-auto">
+        <div className="relative w-10 h-10 sm:w-12 sm:h-12 flex-shrink-0">
+          <Image
+            src={t.photo}
+            alt={t.name}
+            fill
+            unoptimized
+            className="rounded-full object-cover border-2 border-[var(--color-primary)]"
+            onError={(e) => {
+              (e.currentTarget as HTMLImageElement).src =
+                'https://ui-avatars.com/api/?name=' +
+                encodeURIComponent(t.name) +
+                '&background=6c63ff&color=fff&size=128';
+            }}
+          />
+        </div>
+        <div>
+          <p className="font-semibold text-sm text-gray-900">{t.name}</p>
+          <p className="text-xs text-[var(--color-primary)]">{t.designation}</p>
+          <p className="text-xs text-gray-400 mt-0.5">{t.service}</p>
+        </div>
+      </div>
+    </div>
+  );
+
+  return (
+    <section className="bg-gray-50 py-12 sm:py-16 px-4 sm:px-6 border-t border-gray-200">
+      <div className="max-w-5xl mx-auto">
+        <h2 className="text-xl sm:text-2xl font-bold text-center mb-6 sm:mb-10 text-[var(--color-primary)]">
+          What Our Clients Say
+        </h2>
+
+        {/* Mobile Carousel */}
+        <div className="sm:hidden">
+          <div className="relative">
+            <div
+              ref={scrollRef}
+              className="flex gap-3 overflow-x-auto snap-x snap-mandatory scrollbar-hide pb-2 -mx-4 px-4"
+            >
+              {portfolioTestimonials.map((t, i) => (
+                <div key={i} className="snap-center flex-shrink-0 w-[82vw] max-w-[320px]">
+                  <Card t={t} />
+                </div>
+              ))}
+            </div>
+
+            <button
+              onClick={() => scroll('left')}
+              className="absolute left-0 top-1/2 -translate-y-1/2 -translate-x-1 z-10 w-8 h-8 rounded-full bg-white/90 shadow-md flex items-center justify-center active:scale-90 transition"
+              aria-label="Previous"
+            >
+              <svg className="w-4 h-4 text-gray-700" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2.5}><path strokeLinecap="round" strokeLinejoin="round" d="M15 19l-7-7 7-7" /></svg>
+            </button>
+            <button
+              onClick={() => scroll('right')}
+              className="absolute right-0 top-1/2 -translate-y-1/2 translate-x-1 z-10 w-8 h-8 rounded-full bg-white/90 shadow-md flex items-center justify-center active:scale-90 transition"
+              aria-label="Next"
+            >
+              <svg className="w-4 h-4 text-gray-700" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2.5}><path strokeLinecap="round" strokeLinejoin="round" d="M9 5l7 7-7 7" /></svg>
+            </button>
+          </div>
+
+          {/* Dot indicators */}
+          <div className="flex justify-center gap-1.5 mt-4">
+            {portfolioTestimonials.map((_, i) => (
+              <div
+                key={i}
+                className={`h-1.5 rounded-full transition-all duration-300 ${
+                  i === activeIdx ? 'w-6 bg-[var(--color-primary)]' : 'w-1.5 bg-gray-300'
+                }`}
+              />
+            ))}
+          </div>
+        </div>
+
+        {/* Desktop Grid */}
+        <div className="hidden sm:grid gap-6 md:grid-cols-2">
+          {portfolioTestimonials.map((t, i) => (
+            <Card key={i} t={t} />
+          ))}
+        </div>
+      </div>
+    </section>
+  );
+};
+
 // ─── Portfolio Page ─────────────────────────────────────────────────────────────
 export default function PortfolioPage() {
   const [activeFilter, setActiveFilter] = useState<ServiceFilter>('All');
@@ -339,22 +519,22 @@ export default function PortfolioPage() {
     <main className="min-h-screen bg-[var(--color-background)] text-[var(--color-foreground)]">
 
       {/* ── Hero Banner ── */}
-      <section className="bg-gradient-to-br from-[var(--color-primary)] to-[#1a1a2e] text-white py-20 px-6 text-center">
-        <h1 className="text-4xl md:text-5xl font-black mb-4 tracking-tight">Our Portfolio</h1>
-        <p className="text-gray-200 max-w-xl mx-auto text-lg">
+      <section className="bg-gradient-to-br from-[var(--color-primary)] to-[#1a1a2e] text-white py-14 sm:py-20 px-4 sm:px-6 text-center">
+        <h1 className="text-3xl sm:text-4xl md:text-5xl font-black mb-3 sm:mb-4 tracking-tight">Our Portfolio</h1>
+        <p className="text-gray-200 max-w-xl mx-auto text-base sm:text-lg">
           A curated showcase of creative work across video, design, web, and more.
         </p>
       </section>
 
       {/* ── Sticky Filter Tabs ── */}
-      <section className="sticky top-16 z-30 bg-white/95 backdrop-blur border-b border-gray-200 shadow-sm">
-        <div className="max-w-7xl mx-auto px-6 overflow-x-auto">
+      <section className="sticky top-16 z-30 bg-white/95 backdrop-blur border-b border-gray-200 shadow-sm overflow-hidden">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 overflow-x-auto scrollbar-hide">
           <div className="flex gap-1.5 py-3 min-w-max">
             {serviceFilters.map((filter) => (
               <button
                 key={filter}
                 onClick={() => setActiveFilter(filter)}
-                className={`px-4 py-1.5 rounded-full text-sm font-medium transition whitespace-nowrap ${
+                className={`px-3.5 sm:px-4 py-1.5 rounded-full text-xs sm:text-sm font-medium transition whitespace-nowrap active:scale-95 ${
                   activeFilter === filter
                     ? 'bg-[var(--color-primary)] text-white shadow'
                     : 'text-gray-600 hover:bg-gray-100'
@@ -369,9 +549,9 @@ export default function PortfolioPage() {
 
       {/* ── VIDEO PRODUCTION Section ── */}
       {(activeFilter === 'All' || activeFilter === 'Video Editing') && (
-        <section className="max-w-7xl mx-auto px-6 py-14">
-          <div className="text-center mb-10">
-            <h2 className="text-3xl font-black uppercase tracking-tight text-[var(--color-primary)]">
+        <section className="max-w-7xl mx-auto px-4 sm:px-6 py-10 sm:py-14">
+          <div className="text-center mb-8 sm:mb-10">
+            <h2 className="text-2xl sm:text-3xl font-black uppercase tracking-tight text-[var(--color-primary)]">
               Video Production
             </h2>
             <p className="text-gray-500 mt-2 text-sm">
@@ -379,7 +559,7 @@ export default function PortfolioPage() {
             </p>
           </div>
 
-          <div className="space-y-14">
+          <div className="space-y-10 sm:space-y-14">
             {videoCategories.map((cat) => {
               const items = itemsForCategory(cat);
               if (items.length === 0) return null;
@@ -392,10 +572,19 @@ export default function PortfolioPage() {
                       ({items.length} project{items.length > 1 ? 's' : ''})
                     </span>
                   </h3>
+                  {/* Mobile: logo grid */}
+                  <MobileLogoGrid items={items} onPlay={setActiveVideo} />
+                  {/* Desktop: full cards */}
                   {cat === 'Short Form' ? (
-                    <HorizontalRow items={items} onPlay={setActiveVideo} />
+                    <div className="hidden sm:block">
+                      <HorizontalRow items={items} onPlay={setActiveVideo} />
+                    </div>
                   ) : (
-                    <GridRow items={items} onPlay={setActiveVideo} />
+                    <div className="hidden sm:grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-3 sm:gap-4">
+                      {items.map((item) => (
+                        <VideoCard key={item.id} item={item} onPlay={setActiveVideo} className="w-full" />
+                      ))}
+                    </div>
                   )}
                 </div>
               );
@@ -406,9 +595,9 @@ export default function PortfolioPage() {
 
       {/* ── Coming Soon for other filters ── */}
       {activeFilter !== 'All' && activeFilter !== 'Video Editing' && (
-        <section className="max-w-7xl mx-auto px-6 py-24 text-center">
-          <div className="text-6xl mb-5">🚧</div>
-          <h2 className="text-2xl font-bold text-gray-700 mb-3">
+        <section className="max-w-7xl mx-auto px-4 sm:px-6 py-16 sm:py-24 text-center">
+          <div className="text-5xl sm:text-6xl mb-4 sm:mb-5">🚧</div>
+          <h2 className="text-xl sm:text-2xl font-bold text-gray-700 mb-3">
             {activeFilter} Portfolio
           </h2>
           <p className="text-gray-500 max-w-sm mx-auto">
@@ -418,47 +607,7 @@ export default function PortfolioPage() {
       )}
 
       {/* ── Testimonials Strip ── */}
-      <section className="bg-gray-50 py-16 px-6 border-t border-gray-200">
-        <div className="max-w-5xl mx-auto">
-          <h2 className="text-2xl font-bold text-center mb-10 text-[var(--color-primary)]">
-            What Our Clients Say
-          </h2>
-          <div className="grid gap-6 md:grid-cols-2">
-            {portfolioTestimonials.map((t, i) => (
-              <div
-                key={i}
-                className="bg-white p-6 rounded-xl shadow-sm border border-gray-100 flex flex-col gap-4"
-              >
-                <p className="text-gray-600 italic leading-relaxed text-sm">
-                  &ldquo;{t.quote}&rdquo;
-                </p>
-                <div className="flex items-center gap-3 mt-auto">
-                  <div className="relative w-12 h-12 flex-shrink-0">
-                    <Image
-                      src={t.photo}
-                      alt={t.name}
-                      fill
-                      unoptimized
-                      className="rounded-full object-cover border-2 border-[var(--color-primary)]"
-                      onError={(e) => {
-                        (e.currentTarget as HTMLImageElement).src =
-                          'https://ui-avatars.com/api/?name=' +
-                          encodeURIComponent(t.name) +
-                          '&background=6c63ff&color=fff&size=128';
-                      }}
-                    />
-                  </div>
-                  <div>
-                    <p className="font-semibold text-sm text-gray-900">{t.name}</p>
-                    <p className="text-xs text-[var(--color-primary)]">{t.designation}</p>
-                    <p className="text-xs text-gray-400 mt-0.5">{t.service}</p>
-                  </div>
-                </div>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
+      <PortfolioTestimonials />
 
       {/* Video Modal */}
       <VideoModal item={activeVideo} onClose={() => setActiveVideo(null)} />

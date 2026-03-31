@@ -7,12 +7,12 @@ export default function LicensesPage() {
   return (
     <main className='min-h-screen bg-white'>
       {/* Hero */}
-      <section className='bg-gradient-to-br from-gray-900 via-gray-800 to-gray-900 text-white py-20 px-6'>
+      <section className='bg-gradient-to-br from-gray-900 via-gray-800 to-gray-900 text-white py-14 sm:py-20 px-4 sm:px-6'>
         <div className='max-w-4xl mx-auto text-center'>
-          <div className='inline-flex items-center justify-center w-16 h-16 rounded-2xl bg-[var(--color-primary)]/20 mb-6'>
-            <Scale className='w-8 h-8 text-[var(--color-primary)]' />
+          <div className='inline-flex items-center justify-center w-14 sm:w-16 h-14 sm:h-16 rounded-2xl bg-[var(--color-primary)]/20 mb-5 sm:mb-6'>
+            <Scale className='w-7 sm:w-8 h-7 sm:h-8 text-[var(--color-primary)]' />
           </div>
-          <h1 className='text-4xl md:text-5xl font-bold mb-4'>Licenses &amp; Legal Disclosures</h1>
+          <h1 className='text-3xl sm:text-4xl md:text-5xl font-bold mb-3 sm:mb-4'>Licenses &amp; Legal Disclosures</h1>
           <p className='text-gray-400 max-w-2xl mx-auto'>
             Saarva IT and Digital Services LLP is committed to lawful, ethical, and transparent business operations. This page provides general legal and compliance disclosures relating to our website and business operations.
           </p>
@@ -23,8 +23,8 @@ export default function LicensesPage() {
       </section>
 
       {/* Content */}
-      <section className='py-16 px-6'>
-        <div className='max-w-3xl mx-auto prose prose-gray prose-headings:text-gray-900 prose-p:text-gray-600 prose-li:text-gray-600'>
+      <section className='py-10 sm:py-16 px-4 sm:px-6'>
+        <div className='max-w-3xl mx-auto prose prose-sm sm:prose-base prose-gray prose-headings:text-gray-900 prose-p:text-gray-600 prose-li:text-gray-600'>
 
           <h2>1. Business Details</h2>
           <div className='bg-gray-50 rounded-xl p-6 not-prose mb-6'>
@@ -97,11 +97,11 @@ export default function LicensesPage() {
       </section>
 
       {/* Back link */}
-      <section className='pb-16 px-6'>
+      <section className='pb-10 sm:pb-16 px-4 sm:px-6'>
         <div className='max-w-3xl mx-auto'>
           <Link
             href='/'
-            className='inline-flex items-center gap-2 text-sm text-[var(--color-primary)] font-semibold hover:underline'
+            className='inline-flex items-center gap-2 text-sm text-[var(--color-primary)] font-semibold hover:underline active:scale-95 transition-transform'
           >
             <ArrowLeft className='w-4 h-4' />
             Back to Home

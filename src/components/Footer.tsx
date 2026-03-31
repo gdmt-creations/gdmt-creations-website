@@ -51,11 +51,11 @@ const SocialIcon = ({ icon }: { icon: string }) => {
 
 const Footer = () => {
   return (
-    <footer className='bg-[#0d0d0d] text-white px-6 py-14'>
-      <div className='max-w-7xl mx-auto grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-10'>
+    <footer className='bg-[#0d0d0d] text-white px-4 sm:px-6 py-10 sm:py-14'>
+      <div className='max-w-7xl mx-auto grid grid-cols-2 sm:grid-cols-2 lg:grid-cols-4 gap-8 sm:gap-10'>
 
         {/* Column 1: Brand */}
-        <div className='space-y-4'>
+        <div className='space-y-3 sm:space-y-4 col-span-2 sm:col-span-2 lg:col-span-1'>
           <div className='flex items-center gap-3'>
             <Image
               src='/assets/images/logo.svg'
@@ -63,9 +63,10 @@ const Footer = () => {
               width={120}
               height={40}
               priority
+              className='w-[100px] sm:w-[120px]'
             />
           </div>
-          <p className='text-sm text-gray-400 leading-relaxed'>
+          <p className='text-xs sm:text-sm text-gray-400 leading-relaxed'>
             Saarva IT &amp; Digital Services LLP — a full-spectrum creative
             studio crafting digital experiences that drive real-world growth.
             Design. Develop. Deliver.
@@ -137,7 +138,7 @@ const Footer = () => {
           <h3 className='text-sm font-semibold uppercase tracking-wider text-gray-300 mb-3'>
             Follow Us
           </h3>
-          <div className='flex flex-wrap gap-3'>
+          <div className='flex flex-wrap gap-4'>
             {socialLinks.map((social) => (
               <a
                 key={social.label}
@@ -146,7 +147,7 @@ const Footer = () => {
                 title={social.label}
                 target='_blank'
                 rel='noopener noreferrer'
-                className='text-gray-400 hover:text-[var(--color-primary)] transition duration-200'
+                className='text-gray-400 hover:text-[var(--color-primary)] active:scale-90 transition-all duration-200 p-1'
               >
                 <SocialIcon icon={social.icon} />
               </a>
@@ -156,7 +157,7 @@ const Footer = () => {
       </div>
 
       {/* Bottom bar */}
-      <div className='mt-12 border-t border-white/10 pt-6 text-center text-xs text-gray-500'>
+      <div className='mt-8 sm:mt-12 border-t border-white/10 pt-5 sm:pt-6 text-center text-[10px] sm:text-xs text-gray-500 pb-safe'>
         &copy; 2026 Saarva IT &amp; Digital Services LLP. All rights reserved.
       </div>
     </footer>

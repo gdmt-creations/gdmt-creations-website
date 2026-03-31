@@ -156,14 +156,14 @@ const ServiceCard = ({
           <div className='flex flex-wrap gap-3 mt-auto'>
             <Link
               href={cta.link}
-              className='group/btn inline-flex items-center gap-2 bg-orange-500 text-white px-5 py-2.5 rounded-lg font-medium text-sm hover:bg-orange-600 hover:shadow-lg hover:shadow-orange-500/20 transition-all duration-300'
+              className='group/btn inline-flex items-center gap-2 bg-orange-500 text-white px-5 py-2.5 rounded-xl font-medium text-sm hover:bg-orange-600 hover:shadow-lg hover:shadow-orange-500/20 active:scale-95 transition-all duration-300'
             >
               {cta.label}
               <ArrowRight className='w-4 h-4 group-hover/btn:translate-x-0.5 transition-transform' />
             </Link>
             <Link
               href={`/services/${slug}`}
-              className='group/btn inline-flex items-center gap-2 border border-gray-200 text-gray-700 px-5 py-2.5 rounded-lg font-medium text-sm hover:border-orange-500 hover:text-orange-500 transition-all duration-300'
+              className='group/btn inline-flex items-center gap-2 border border-gray-200 text-gray-700 px-5 py-2.5 rounded-xl font-medium text-sm hover:border-orange-500 hover:text-orange-500 active:scale-95 transition-all duration-300'
             >
               Learn More
               <ArrowRight className='w-4 h-4 group-hover/btn:translate-x-0.5 transition-transform' />
@@ -195,13 +195,13 @@ const ServicesPage = () => {
         {/* Gradient orbs */}
         <div className='absolute top-0 right-0 w-[300px] h-[300px] bg-[var(--color-primary)]/5 rounded-full blur-[80px] -translate-y-1/2 translate-x-1/4' />
 
-        <div className='relative max-w-5xl mx-auto px-6 py-16 sm:py-20 text-center'>
+        <div className='relative max-w-5xl mx-auto px-4 sm:px-6 py-14 sm:py-20 text-center'>
           <div className='inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-white/10 backdrop-blur-sm border border-white/10 text-sm text-white/80 mb-6'>
             <Sparkles className='w-4 h-4 text-[var(--color-primary)]' />
             Integrated · Insightful · Impact-Driven
           </div>
 
-          <h1 className='text-4xl sm:text-5xl lg:text-6xl font-black tracking-tight mb-6 leading-[1.1]'>
+          <h1 className='text-3xl sm:text-5xl lg:text-6xl font-black tracking-tight mb-5 sm:mb-6 leading-[1.1]'>
             Creative Services That{' '}
             <span className='text-transparent bg-clip-text bg-gradient-to-r from-[var(--color-primary)] to-orange-400'>
               Elevate Your Brand
@@ -214,7 +214,7 @@ const ServicesPage = () => {
           </p>
 
           {/* Quick-nav service pills */}
-          <div className='flex flex-wrap justify-center gap-2 max-w-3xl mx-auto'>
+          <div className='flex flex-wrap justify-center gap-2 max-w-3xl mx-auto scrollbar-hide'>
             {servicesList.map(({ title, slug }) => (
               <a
                 key={slug}
@@ -230,8 +230,8 @@ const ServicesPage = () => {
       </section>
 
       {/* ── Service Cards ── */}
-      <section className='px-6 py-12 sm:py-16'>
-        <div className='max-w-6xl mx-auto flex flex-col gap-12 sm:gap-16'>
+      <section className='px-4 sm:px-6 py-10 sm:py-16'>
+        <div className='max-w-6xl mx-auto flex flex-col gap-8 sm:gap-16'>
           {servicesList.map((service, idx) => (
             <div key={service.slug} id={service.slug}>
               <ServiceCard {...service} idx={idx} />
@@ -241,13 +241,13 @@ const ServicesPage = () => {
       </section>
 
       {/* ── Bottom CTA ── */}
-      <section className='px-6 pb-20'>
+      <section className='px-4 sm:px-6 pb-14 sm:pb-20'>
         <div className='max-w-4xl mx-auto text-center'>
-          <div className='bg-gradient-to-br from-gray-900 to-gray-800 rounded-3xl px-8 py-14 sm:px-14 sm:py-16 relative overflow-hidden'>
+          <div className='bg-gradient-to-br from-gray-900 to-gray-800 rounded-2xl sm:rounded-3xl px-5 py-10 sm:px-14 sm:py-16 relative overflow-hidden'>
             {/* Decorative orb */}
             <div className='absolute top-0 right-0 w-64 h-64 bg-[var(--color-primary)]/15 rounded-full blur-[80px] -translate-y-1/2 translate-x-1/3' />
             <div className='relative'>
-              <h2 className='text-3xl sm:text-4xl font-bold text-white mb-4'>
+              <h2 className='text-2xl sm:text-3xl md:text-4xl font-bold text-white mb-3 sm:mb-4'>
                 Ready to bring your vision to life?
               </h2>
               <p className='text-white/60 mb-8 max-w-xl mx-auto'>
@@ -256,7 +256,7 @@ const ServicesPage = () => {
               </p>
               <Link
                 href='/contact'
-                className='inline-flex items-center gap-2 bg-orange-500 text-white px-8 py-3.5 rounded-xl font-semibold text-base hover:bg-orange-600 hover:shadow-lg hover:shadow-orange-500/25 transition-all duration-300'
+                className='inline-flex items-center gap-2 bg-orange-500 text-white px-8 py-3.5 rounded-xl font-semibold text-base hover:bg-orange-600 hover:shadow-lg hover:shadow-orange-500/25 active:scale-95 transition-all duration-300'
               >
                 Get in Touch
                 <ArrowRight className='w-5 h-5' />

@@ -34,12 +34,14 @@ export default function RootLayout({
   return (
     <html lang='en'>
       <body className={`${geistSans.variable} ${geistMono.variable} font-sans`}>
-        <Toaster position='top-center' />
-        <Navbar />
-        <main className='pt-16'>
-          {children}
-        </main>
-        <Footer />
+        <div className='overflow-x-clip'>
+          <Toaster position='top-center' />
+          <Navbar />
+          <main className='pt-16'>
+            {children}
+          </main>
+          <Footer />
+        </div>
       </body>
     </html>
   );

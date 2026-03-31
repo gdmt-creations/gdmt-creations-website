@@ -13,9 +13,9 @@ export const legalLinks = [
 ];
 
 export const contactInfo = {
-  phone: '+91-98991 15721',
-  email: 'hello@saarva.co.in',
-  address: 'Gurugram, Haryana, India',
+  phone: '+91-88510 55230',
+  email: 'saarva.info@gmail.com',
+  address: 'First Floor, Plot 737, Sector 9A, Gurugram, Haryana, 122001',
 };
 
 export const socialLinks = [
