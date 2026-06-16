@@ -117,12 +117,6 @@ const ServiceCard = ({
               {icon}
             </div>
           </div>
-          {/* Index number */}
-          <div className='absolute bottom-4 right-4 z-10'>
-            <span className='text-white/30 font-black text-6xl leading-none select-none'>
-              {String(idx + 1).padStart(2, '0')}
-            </span>
-          </div>
           {/* Gradient overlay for text legibility on mobile */}
           <div className='absolute inset-0 bg-gradient-to-t from-black/30 via-transparent to-transparent lg:hidden' />
         </div>
